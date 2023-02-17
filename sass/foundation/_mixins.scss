@@ -5,23 +5,19 @@
 //========================================
 
 //color set
-$primary-color: #00ae68;
-$secondary-color: #003d25;
-$third-color: #9bd429;
-$accent-color: #ebf141;
+$primary-color: #f6c10d;
+$secondary-color: #fff40b;
+$third-color: #262626;
 
-$bg-color: #eef2f1;
-$border-color: #dedede;
-$txt-color: #003d25;
-$link-color: #003d25;
-
-$gradient-primary: linear-gradient(135deg, rgba(246,171,0,1) 0%, rgba(247,181,0,1) 50%, rgba(237,87,0,.76) 100%);
-$gradient-secondary: linear-gradient(135deg, rgba(#7cb236,1) 0%, rgba(#89ba3c,1) 50%, rgba(#006500,.76) 100%);
+$bg-color: #f6c10d;
+$border-color: #e5e5e5;
+$txt-color: #4a362e;
+$link-color: #4a362e;
 
 //font-family
 $default-family: 'Noto Sans JP', "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
 $mincho: "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
-$eng: 'Cabin', sans-serif;
+$eng: 'Poppins', sans-serif;
 
 $default-family-ie: "メイリオ", Meiryo, sans-serif;
 $mincho-ie:  "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
