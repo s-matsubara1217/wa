@@ -1,0 +1,84 @@
+/* notfound - 共通 */
+.notfound {
+  text-align: center;
+}
+.notfound p {
+  font-weight: bold;
+}
+.notfound_p_tb {
+  padding: 6em 0;
+}
+.notfound_p_t {
+  padding: 6em 0 0;
+}
+.notfound_p_b {
+  padding: 0 0 6em;
+}
+@media only screen and (max-width: 768px) {
+  /*
+	.notfound{
+		p{
+			font-size: 1rem;
+		}
+	}
+    */
+  .notfound_p_tb {
+    padding: 3em 0;
+  }
+}
+.lower-interview_d .sec__oneday .oneday__list__item .time {
+  flex: 0 0 90px;
+  white-space: nowrap;
+}
+@media only screen and (max-width: 834px) {
+  .lower-interview_d .sec__oneday .oneday__list__item .time {
+    flex: 0 0 75px;
+  }
+}
+.lower-interview_d .sec__oneday .oneday__list__item .todo {
+  flex: 1 1 auto;
+}
+.lower-jobs .jobs__cta__wrap {
+  padding: 72px 7.6%;
+}
+@media only screen and (max-width: 1200px) {
+  .lower-jobs .jobs__cta__wrap {
+    padding: 56px 4.8%;
+  }
+}
+@media only screen and (max-width: 834px) {
+  .lower-jobs .jobs__cta__wrap {
+    padding: 36px 8.4%;
+  }
+}
+.lower-jobs .jobs__cta__wrap .txtArea .txt {
+  font-size: 2.6rem;
+}
+@media only screen and (max-width: 1200px) {
+  .lower-jobs .jobs__cta__wrap .txtArea .txt {
+    font-size: 2.3rem;
+  }
+}
+@media only screen and (max-width: 834px) {
+  .lower-jobs .jobs__cta__wrap .txtArea .txt {
+    font-size: 2rem;
+  }
+}
+.lower-jobs .jobs__cta__wrap .commonBtn01 a {
+  padding: 18px 56px;
+}
+@media only screen and (max-width: 1200px) {
+  .lower-jobs .jobs__cta__wrap .commonBtn01 a {
+    padding: 18px 40px;
+  }
+}
+@media only screen and (max-width: 834px) {
+  .lower-jobs .jobs__cta__wrap .commonBtn01 a {
+    padding: 12px 32px;
+  }
+}
+@media only screen and (max-width: 834px) {
+  .lower-jobs .jobs__cta__wrap .commonBtn01 a .txt {
+    font-size: 1.4rem;
+  }
+}

@@ -1,0 +1,484 @@
+@charset "utf-8";
+@use '../foundation/mixins' as *;
+// @include mq(pc)
+// @include mq(tab)
+// @include mq(sp)
+
+/* ============================================
+// お仕事紹介
+// ==========================================*/
+
+.lower-jobs {
+
+  // 余白
+  .l-main {
+    padding-top: 56px;
+    padding-bottom: 100px;
+    background-color: #fff;
+    position: relative;
+    @include mq(sp) {
+      padding-top: 40px;
+      padding-bottom: 64px;
+    }
+
+    // 白色 背景
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 100px;
+      background-color: #fff;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      z-index: -1;
+      pointer-events: none;
+    }
+    // $bg-color 背景
+    &:after {
+      content: '';
+      display: inline-block;
+      background-color: $bg-color;
+      width: 75%;
+      height: calc(100% + 100px);
+      position: absolute;
+      top: 0;
+      right: 0;
+      pointer-events: none;
+    }
+  }
+
+  .jobs {
+
+    &__main {
+      &__inner {
+        max-width: 1180px;
+      }
+    }
+    &__cta {
+      margin-top: 80px;
+      @include mq(sp) {
+        margin-top: 48px;
+      }
+
+      &__wrap {
+        background-color: $primary-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #fff;
+        border-radius: 16px;
+        padding: 72px 8.4%;
+        @include mq(sp) {
+          display: block;
+          padding: 36px 8.4%;
+        }
+
+        .txtArea {
+          @include mq(sp) {
+            text-align: center;
+          }
+          .txt {
+            font-size: 3rem;
+            font-weight: bold;
+            border-bottom: 2px solid;
+            line-height: 2.2;
+            background: linear-gradient(transparent 99%, #fff 0%);
+            display: inline;
+            padding-bottom: 4px;
+            @include mq(tab) {
+              font-size: 2.4rem;
+            }
+            @include mq(sp) {
+              font-size: 2rem;
+            }
+          }
+        }
+        .commonBtn01 {
+          flex-shrink: 0;
+          @include mq(sp) {
+            text-align: center;
+            margin-top: 28px;
+          }
+        }
+      }
+    }
+
+    // アンカー
+    &__anchorList {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      margin: -10px -16px;
+      @include mq(sp) {
+        margin: -7px -2%;
+      }
+      &.js-active {
+        .jobs__anchorList__item {
+          opacity: 1;
+        }
+      }
+
+      &__item {
+        margin: 10px 16px;
+        opacity: 0;
+        transition: opacity 0.6s;
+        @for $i from 1 through 10 {
+          &:nth-child(#{$i}) {
+            transition-delay: 0.15s * $i - 0.15s;
+          }
+        }
+        @include mq(sp) {
+          margin: 7px 2%;
+          width: 46%;
+          max-width: 150px;
+        }
+        a {
+          background-color: #fff;
+          border: 3px solid $primary-color;
+          border-radius: 10px;
+          font-size: 1.6rem;
+          padding: 18px 24px 18px 40px;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          transition: transform 0.3s, box-shadow 0.3s;
+          @include mq(pc) {
+            &:hover {
+              transform: translateY(-4px);
+              box-shadow: 0px 10px 24px -16px #777777;
+            }
+          }
+          @include mq(sp) {
+            padding: 9px 10px 9px 12px;
+            border: 2px solid $primary-color;
+            font-size: 1.5rem;
+            justify-content: center;
+          }
+
+          &::after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-top: 2px solid $txt-color;
+            border-right: 2px solid $txt-color;
+            transform: rotate(135deg);
+            margin-left: 28px;
+            @include mq(sp) {
+              margin-left: 16px;
+              width: 6px;
+              height: 6px;
+            }
+          }
+        }
+      }
+    }
+    // ブロック
+    &__blockList {
+      margin-top: 80px;
+      @include mq(sp) {
+        margin-top: 40px;
+      }
+
+      &__item {
+        border: 6px solid #e6ebe9;
+        border-radius: 24px;
+        background-color: #fff;
+        padding: 48px 4%;
+        margin-top: 48px;
+        position: relative;
+        overflow: hidden;
+        @include mq(sp) {
+          margin-top: 32px;
+          border: 4px solid #e6ebe9;
+          padding: 32px 8%;
+        }
+        &:first-child {
+          margin-top: 0;
+        }
+
+        // 装飾 リーフ
+        &::before {
+          content: '';
+          display: inline-block;
+          background-image: url(../img/jobs/deco_leaf_large.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 356px;
+          height: 323px;
+          position: absolute;
+          top: 140px;
+          right: -8px;
+          opacity: 0.2;
+          pointer-events: none;
+          @include mq(sp) {
+            display: none;
+          }
+        }
+
+        &__head {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          @include mq(sp) {
+            flex-direction: column-reverse;
+            align-items: flex-start;
+          }
+
+          .imgArea {
+            flex: 0 0 50%;
+            max-width: 500px;
+            margin-right: 4.4%;
+            @include mq(sp) {
+              width: 100%;
+              margin: 0 auto;
+              margin-top: 20px;
+            }
+
+            // 緑色背景
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 200px;
+              height: 200px;
+              background-color: $primary-color;
+              position: absolute;
+              top: 0;
+              left: 0;
+              border-radius: 16px 0 0 0;
+              @include mq(sp) {
+                display: none;
+              }
+            }
+
+            .img {
+              @include keepAspect(66%);
+              img {
+                border-radius: 8px;
+              }
+            }
+          }
+          .txtArea {
+            flex: 1 1 auto;
+            color: $primary-color;
+            .num {
+              font-size: 1.8rem;
+              border-bottom: 2px solid;
+              display: inline-block;
+              line-height: 1.5;
+              @include mq(sp) {
+                font-size: 1.6rem;
+              }
+            }
+            .job-name {
+              font-size: 4.4rem;
+              font-weight: bold;
+              line-height: 1.6;
+              margin-top: 8px;
+              letter-spacing: 0.075em;
+              @include mq(tab) {
+                font-size: 3.6rem;
+              }
+              @include mq(sp) {
+                font-size: 2.4rem;
+                margin-top: 4px;
+              }
+            }
+          }
+        }
+        &__body {
+          padding: 0 5%;
+          margin-top: 44px;
+          position: relative;
+          z-index: 2;
+          @include mq(sp) {
+            margin-top: 28px;
+            padding: 0;
+          }
+        }
+
+        .aboutBlock {
+          &__head {
+            .ttl {
+              font-size: 2.4rem;
+              font-weight: bold;
+              line-height: 1.6;
+              color: $primary-color;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              @include mq(sp) {
+                font-size: 1.8rem;
+              }
+
+              // アイコン
+              &::before {
+                content: '';
+                display: inline-block;
+                background-image: url(../img/jobs/ico_info.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 26px;
+                height: 26px;
+                flex-shrink: 0;
+                margin-right: 10px;
+                @include mq(sp) {
+                  width: 20px;
+                  height: 20px;
+                  margin-right: 8px;
+                }
+              }
+            }
+            .desc {
+              font-size: 1.6rem;
+              margin-top: 8px;
+              @include mq(sp) {
+                font-size: 1.5rem;
+                margin-top: 6px;
+              }
+            }
+          }
+          &__list {
+            margin-top: 28px;
+            @include mq(sp) {
+              margin-top: 24px;
+            }
+            &__item {
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              padding: 20px 0;
+              border-bottom: 2px solid #eef2f1;
+              @include mq(sp) {
+                display: block;
+              }
+
+              &:first-child {
+                padding-top: 0;
+              }
+              &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+              }
+
+              &__txtArea {
+                flex: 1 1 auto;
+                .term {
+                  font-size: 1.8rem;
+                  color: $primary-color;
+                  display: flex;
+                  justify-content: flex-start;
+                  align-items: center;
+                  @include mq(sp) {
+                    font-size: 1.7rem;
+                  }
+
+                  // 縦ライン
+                  &::before {
+                    content: '';
+                    display: inline-block;
+                    width: 6px;
+                    height: 28px;
+                    background-color: $primary-color;
+                    border-radius: 2px;
+                    margin-right: 12px;
+                    @include mq(sp) {
+                      width: 4px;
+                      height: 24px;
+                      margin-right: 10px;
+                    }
+                  }
+                }
+                .desc {
+                  margin-top: 8px;
+                  @include mq(sp) {
+                    margin-top: 12px;
+                  }
+                }
+              }
+              &__imgArea {
+                flex: 0 0 30%;
+                max-width: 260px;
+                margin-left: 3.3%;
+                @include mq(sp) {
+                  width: 85%;
+                  margin: 0 auto;
+                  margin-left: 0;
+                  margin-top: 12px;
+                }
+
+                .img {
+                  @include keepAspect(70%);
+                  img {
+                    border-radius: 8px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .staffBlock {
+          margin-top: 52px;
+          @include mq(sp) {
+            margin-top: 36px;
+          }
+
+          &__head {
+            .ttl {
+              font-size: 2.4rem;
+              font-weight: bold;
+              line-height: 1.6;
+              color: $primary-color;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              @include mq(sp) {
+                font-size: 1.8rem;
+              }
+
+              // アイコン
+              &::before {
+                content: '';
+                display: inline-block;
+                background-image: url(../img/jobs/ico_staff.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 26px;
+                height: 26px;
+                flex-shrink: 0;
+                margin-right: 10px;
+                @include mq(sp) {
+                  width: 20px;
+                  height: 20px;
+                  margin-right: 8px;
+                }
+              }
+            }
+          }
+          &__body {
+            margin-top: 16px;
+            background-color: #eef2f1;
+            border-radius: 8px;
+            padding: 28px 4%;
+            @include mq(sp) {
+              margin-top: 12px;
+              padding: 20px 8%;
+            }
+          }
+        }
+        .commonBtn01 {
+          margin-top: 40px;
+          @include mq(sp) {
+            text-align: center;
+            margin-top: 32px;
+          }
+        }
+      }
+    }
+
+  }
+
+}

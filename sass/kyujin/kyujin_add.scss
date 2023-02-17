@@ -1,0 +1,307 @@
+@charset "utf-8";
+@use '../foundation/mixins' as *;
+// @include mq(sp)
+// @include mq(tab)
+
+/* ============================================
+// 求人 追加分
+// ==========================================*/
+
+/*--------------------
+	共通
+--------------------*/
+.lower-kyujin_l,
+.lower-kyujin_d,
+.lower-whatsnew {
+  // 余白
+  .l-main {
+    padding-bottom: 110px;
+    @include mq(sp) {
+      padding-bottom: 56px;
+    }
+  }
+  .job_count_pager {
+    &.contents_top,
+    &.contents_bottom {
+      .pagination {
+        a,em {
+          border-radius: 50%;
+          transition: all 0.3s;
+          &:hover {
+            @include mq(pc) {
+              background-color: $primary-color;
+              color: #fff;
+            }
+          }
+        }
+        a {
+          background-color: #fff;
+        }
+        em {
+          // background-color: #4a362e;
+        }
+      }
+    }
+    &.contents_top {
+      .pagination {
+        li {
+          margin: 0 2px;
+        }
+      }
+    }
+  }
+  .btn {
+    border-radius: 100px;
+
+    &.btn_secondary {
+      background-color: #007a49;
+    }
+    &.btn_external {
+      &:after  {
+        top:24px;
+        right: 20px;
+        @include mq(sp) {
+          top: 19px;
+          right: 16px;
+        }
+      }
+    }
+  }
+  .gMap_link {
+    @include mq(pc) {
+      transition: opacity 0.3s, color 0.3s;
+      &:hover {
+        opacity: 0.7;
+        color: $primary-color;
+      }
+    }
+  }
+}
+
+/*--------------------
+	一覧 / 新着求人
+--------------------*/
+.lower-kyujin_l,
+.lower-whatsnew {
+  .job {
+    border: none;
+    background-color: #fff;
+    padding: 40px;
+    margin-top: 40px;
+    border-radius: 10px;
+    @include mq(sp) {
+      padding: 28px 24px;
+      margin-top: 28px;
+    }
+
+    &:first-child {
+      border: none;
+      margin-top: 0;
+    }
+  }
+  .job_body_head_img,
+  .job_img_wrap {
+    a {
+      @include mq(pc) {
+        &:hover {
+          opacity: 1;
+          img {
+            transform: scale(1.08);
+          }
+        }
+      }
+      .job_img {
+        overflow: hidden;
+
+        img {
+          transition: transform 0.3s;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+	一覧
+--------------------*/
+.lower-kyujin_l {
+  .l-main {
+    padding-top: 110px;
+    @include mq(sp) {
+      padding-top: 64px;
+    }
+  }
+
+  .search_panel {
+    background-color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 64px 5.5% 52px;
+    @include mq(sp) {
+      padding: 44px 6.4% 32px;
+    }
+  }
+  .search_body {
+    padding: 0;
+    padding-bottom: 40px;
+    @include mq(sp) {
+      padding-bottom: 28px;
+    }
+  }
+  .search-toggle {
+    border-radius: 100px;
+    @include mq(pc) {
+      transition: background 0.3s;
+      &:hover {
+        opacity: 1;
+        background-color: lighten($primary-color,5%);
+      }
+    }
+    .toggle_txt {
+      padding: 0.8em;
+      @include mq(sp) {
+        font-size: 1.3rem;
+      }
+    }
+    .toggle_trigger {
+      border-radius: 0 100px 100px 0;
+    }
+  }
+  .job_result_total_body_ttl {
+    @include mq(sp) {
+      font-size: 1.3rem;
+    }
+  }
+  .custom-form .category_list input[type=checkbox]+label {
+    border: 1px solid #dedede;
+  }
+}
+
+/*--------------------
+	詳細
+--------------------*/
+.lower-kyujin_d {
+  .l-main {
+    padding-top: 64px;
+    @include mq(sp) {
+      padding-top: 28px;
+    }
+  }
+  .job_body_block {
+    margin: 64px 0;
+    @include mq(sp) {
+      margin: 32px 0;
+    }
+  }
+  .outline_ttl {
+    background-color: $primary-color;
+    padding: 0.8em 1.2em;
+    border-radius: 10px 0 10px 0;
+    margin-bottom: 8px;
+    @include mq(sp) {
+      padding: 0.6em 1em;
+      margin-bottom: 4px;
+    }
+
+    .txt {
+      color: #fff;
+      font-size: 2.1rem;
+      display: inline-block;
+      position: relative;
+      font-weight: bold;
+      @include mq(sp) {
+        font-size: 1.7rem;
+      }
+
+      // アンダーライン
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 4px;
+        width: 0%;
+        height: 10px;
+        background: #007a49;
+        transition: all 0.4s;
+        transition-delay: 0.5s;
+        @include mq(sp) {
+          height: 8px;
+        }
+      }
+
+      &.anime {
+        &.js-active {
+          &:before {
+            width: 100%;
+          }
+        }
+      }
+    }
+
+  }
+  .fixed_convertion {
+    .convertion {
+      .btn_convertion {
+        background-color: $primary-color;
+        border-radius: 100px;
+
+        &:after {
+          top: 50%;
+          right: 24px;
+          transform: translateY(-50%);
+          @include mq(sp) {
+            right: 16px;
+          }
+        }
+      }
+    }
+  }
+  .page_back {
+    padding-bottom: 0;
+    @include mq(sp) {
+      padding-top: 16px;
+    }
+    a {
+      @include mq(pc) {
+        &:hover {
+          color: $primary-color;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}
+
+/*--------------------
+	新着求人
+--------------------*/
+.lower-whatsnew {
+  .l-main {
+    padding-top: 80px;
+    @include mq(sp) {
+      padding-top: 48px;
+    }
+  }
+  .job {
+    margin-top: 32px;
+    @include mq(sp) {
+      margin-top: 24px;
+    }
+
+    &:before,
+    &:after {
+      content: none;
+    }
+  }
+  .job_inner {
+    padding: 0;
+  }
+  .job_count_pager {
+    &.contents_bottom {
+      padding-top: 56px;
+      @include mq(sp) {
+        padding-top: 40px;
+      }
+    }
+  }
+}

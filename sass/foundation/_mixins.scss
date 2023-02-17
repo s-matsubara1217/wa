@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+//========================================
+//variable - mixins
+//========================================
+
+//color set
+$primary-color: #00ae68;
+$secondary-color: #003d25;
+$third-color: #9bd429;
+$accent-color: #ebf141;
+
+$bg-color: #eef2f1;
+$border-color: #dedede;
+$txt-color: #003d25;
+$link-color: #003d25;
+
+$gradient-primary: linear-gradient(135deg, rgba(246,171,0,1) 0%, rgba(247,181,0,1) 50%, rgba(237,87,0,.76) 100%);
+$gradient-secondary: linear-gradient(135deg, rgba(#7cb236,1) 0%, rgba(#89ba3c,1) 50%, rgba(#006500,.76) 100%);
+
+//font-family
+$default-family: 'Noto Sans JP', "游ゴシック", "Yu Gothic", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+$mincho: "ヒラギノ明朝 Pro W3" , "Hiragino Mincho Pro" , "HiraMinProN-W3" , "游明朝" , "Yu Mincho" , "游明朝体" , "YuMincho" , "HGS明朝E" , "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+$eng: 'Cabin', sans-serif;
+
+$default-family-ie: "メイリオ", Meiryo, sans-serif;
+$mincho-ie:  "ＭＳ Ｐ明朝" , "MS PMincho" , serif;
+
+$font-awesome-free: 'Font Awesome 5 Free';
+$font-awesome-brands: 'Font Awesome 5 Brands';
+
+//break-points
+$breakpoints: (
+  'pc': 'screen and (min-width: 835px)',
+	'tab': 'screen and (max-width: 1200px)',
+  'sp': 'screen and (max-width: 834px)',
+  'narrow': 'screen and (max-width: 400px)',
+) !default;
+
+@mixin mq($breakpoint: pc) {
+	@media #{map-get($breakpoints, $breakpoint)} {
+		@content;
+	}
+}
+
+//▼使い方
+//@include mq(tab) {
+//  color: hoge;
+//}
+
+//アスペクト比固定
+@mixin keepAspect($persentage){
+	position: relative;
+	z-index: 1;
+	&:before{
+		content: '';
+		display: block;
+		padding-top: $persentage;
+	}
+	img{
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+	}
+}
+
+// cubic-bezier
+// 徐々に加速 - 徐々に減速 上から「小・中・大」
+$bezier-easeOutSine: cubic-bezier(0.61, 1, 0.88, 1);
+$bezier-easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
+$bezier-easeOutQuint: cubic-bezier(0.23, 1, 0.32, 1);
+// バウンド
+$bezier-easeInBack: cubic-bezier(0.36, 0, 0.66, -0.56);
+$bezier-easeOutBack: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+// ANIMATION
+@mixin keyframes($animation-name: animaton) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+@mixin animation($animation-name) {
+  -webkit-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}

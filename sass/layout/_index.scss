@@ -1,0 +1,1058 @@
+@charset "utf-8";
+@use '../foundation/mixins' as *;
+// @include mq(pc)
+// @include mq(tab)
+// @include mq(sp)
+
+/* ============================================
+// トップページ
+// ==========================================*/
+
+.front-page {
+
+  // 余白
+  main {
+    padding-bottom: 140px;
+    @include mq(tab) {
+      padding-bottom: 110px;
+    }
+    @include mq(sp) {
+      padding-bottom: 80px;
+    }
+  }
+
+  // メインビジュアル
+  .mainVisual {
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: stretch;
+    position: relative;
+    @include mq(sp) {
+      padding-top: 24px;
+      display: block;
+    }
+
+    &__sub {
+      flex: 0 0 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2;
+      @include mq(sp) {
+        flex: 0 0 50px;
+        padding: 16px 0;
+      }
+
+      .txt {
+        font-size: 1.2rem;
+        font-family: $eng;
+        @include mq(pc) {
+          -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+        }
+      }
+    }
+    &__main {
+      margin-top: 60px;
+      max-width: calc(100% - 100px);
+      position: relative;
+      @media all and (-ms-high-contrast: none) {
+        width: calc(100% - 100px);
+      }
+      @include mq(sp) {
+        max-width: 92%;
+        margin-top: 0;
+        margin-left: auto;
+        margin-right: 0;
+      }
+    }
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        opacity: 0.5;
+        filter: blur(5px);
+      }
+    }
+
+    &__hero {
+      max-height: 720px;
+      position: relative;
+
+      .swiper-slide {
+        // 共通
+        overflow: hidden;
+        border-radius: 50px 0 0 50px;
+        position: relative;
+        @include mq(sp) {
+          border-radius: 32px 0 0 32px;
+        }
+
+        // 緑 フィルター
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          pointer-events: none;
+          z-index: 2;
+          @include mq(sp) {
+            border-radius: 24px 0 0 24px;
+          }
+        }
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          right: 0;
+          pointer-events: none;
+          z-index: 2;
+          @include mq(sp) {
+            border-radius: 24px 0 0 24px;
+          }
+        }
+
+        .img {
+          img {
+            max-height: 720px;
+            border-radius: 50px 0 0 50px;
+            transition: 10s 1s ease-out;
+            transform: scale(1.05);
+            @include mq(sp) {
+              border-radius: 32px 0 0 32px;
+              min-height: 240px;
+              object-position: 30%;
+            }
+          }
+        }
+        .mainVisual__copy {
+          position: absolute;
+          top: 50%;
+          z-index: 2;
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          z-index: 10;
+          @include mq(sp) {
+            width: auto;
+            margin-top: 8px;
+            margin-right: 3%;
+          }
+          &__main {
+            img {
+              @include mq(tab) {
+                height: 215px;
+              }
+              @include mq(sp) {
+                max-height: 200px;
+                height: calc(1vw * 115 / 375 * 100);
+              }
+            }
+          }
+          &__sub {
+            margin-top: 24px;
+            color: #fff;
+            @include mq(sp) {
+              font-size: 1rem;
+              line-height: 1.6;
+              margin-top: 12px;
+            }
+          }
+        }
+
+        // 画像の人物が左側
+        &.-left {
+          // 緑 フィルター
+          &::before {
+            background: linear-gradient(-60deg, rgba($secondary-color,0.56) 40%, rgba(0,0,0,0) 60%);
+            @include mq(sp) {
+              background: linear-gradient(-60deg, rgba($secondary-color,0.56) 50%, rgba(0,0,0,0) 70%);
+            }
+          }
+          &::after {
+            background: linear-gradient(-60deg, rgba(0,0,0,0.2) 40%, rgba(0,0,0,0) 60%);
+          }
+
+          .mainVisual__copy {
+            right: 0;
+          }
+        }
+        // 画像の人物が右側
+        &.-right {
+          // 緑 フィルター
+          &::before {
+            background: linear-gradient(-120deg, rgba(0,0,0,0) 40%, rgba($secondary-color,0.56) 60%);
+          }
+          &::after {
+            background: linear-gradient(-120deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.2) 60%);
+          }
+
+          .img {
+            img {
+              object-position: 55%;
+            }
+          }
+          .mainVisual__copy {
+            right: auto;
+            left: 0;
+            @include mq(sp) {
+              margin-left: 20px;
+            }
+          }
+        }
+      }
+      .swiper-button {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        z-index: 10;
+        @include mq(sp) {
+          top: 0;
+          transform: translateY(-50%);
+        }
+
+        &-prev,
+        &-next {
+          position: relative;
+          background-image: url(../img/index/newjobs_swiper_btn.png);
+          background-size: contain;
+          width: 51px;
+          height: 51px;
+          left: auto;
+          right: auto;
+          margin-top: 0;
+          border-radius: 50%;
+          transition: transform 0.3s, box-shadow 0.3s;
+          @include mq(pc) {
+            &:hover {
+              opacity: 0.7;
+            }
+          }
+          @include mq(sp) {
+            width: 38px;
+            height: 38px;
+          }
+        }
+        &-prev {
+          transform: scale(-1,1);
+          margin-right: 8px;
+          @include mq(sp) {
+            margin-right: 4px;
+          }
+        }
+      }
+    }
+  }
+
+  // 新着求人情報
+  .sec__newJobs {
+    background-color: $primary-color;
+    position: relative;
+
+    // 緑色 背景
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 100%;
+      height: 120px + 10px;
+      background-color: $primary-color;
+      position: absolute;
+      top: 10px;
+      left: 0;
+      transform: translateY(-100%);
+      @include mq(tab) {
+        height: 80px + 10px;
+      }
+      @include mq(sp) {
+        height: 48px + 10px;
+      }
+    }
+
+    .newJobs {
+      &__inner {
+        max-width: 1400px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        @include mq(sp) {
+          display: block;
+          padding-top: 24px;
+          padding-bottom: 40px;
+        }
+      }
+      &__head {
+        flex: 0 0 210px;
+        padding: 56px 0;
+        position: relative;
+        z-index: 10;
+        @include mq(sp) {
+          padding: 0;
+        }
+
+        // 緑色背景（swiper隠す用）
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 100vw;
+          height: 100%;
+          background-color: $primary-color;
+          position: absolute;
+          top: 0;
+          right: 0;
+          pointer-events: none;
+          @include mq(sp) {
+            content: none;
+          }
+        }
+
+        &__wrap {
+          position: relative;
+          @include mq(sp) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+          }
+        }
+
+        .commonLink01 {
+          margin-top: 32px;
+          @include mq(sp) {
+            margin-top: 0;
+          }
+        }
+      }
+      &__body {
+        @include mq(sp) {
+          margin-top: 16px;
+        }
+      }
+
+      .swiper {
+        width: 400px;
+        @include mq(sp) {
+          width: 85%;
+        }
+
+        &-slide {
+          a {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            color: #fff;
+            @include mq(pc) {
+              &:hover {
+                .imgArea {
+                  border-radius: 60px 0 60px 0;
+                  img {
+                    transform: scale(1.1);
+                  }
+                }
+                .lead {
+                  opacity: 0.7;
+                }
+              }
+            }
+            @include mq(sp) {
+              align-items: center;
+            }
+
+            .imgArea {
+              flex: 0 0 30%;
+              margin-right: 5%;
+              overflow: hidden;
+              border-radius: 50%;
+              border: 2px solid #fff;
+              transition: all 0.3s;
+              @include keepAspect(100%);
+              @include mq(sp) {
+                max-width: 120px;
+                flex: 0 0 25%;
+              }
+
+              img {
+                transition: all 0.3s;
+              }
+            }
+            .txtArea {
+              .date {
+                color: rgba(#fff,80%);
+                font-family: $eng;
+                @include mq(sp) {
+                  font-size: 1.3rem;
+                }
+              }
+              .status {
+                background-color: $secondary-color;
+                display: inline-block;
+                padding: 0 12px;
+                border-radius: 100px;
+                margin-left: 12px;
+                @include mq(sp) {
+                  font-size: 1.2rem;
+                  margin-left: 8px;
+                }
+              }
+              .lead {
+                transition: opacity 0.3s;
+                margin-top: 12px;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                @include mq(sp) {
+                  line-height: 1.6;
+                  margin-top: 6px;
+                  // -webkit-line-clamp: 1;
+                }
+              }
+            }
+          }
+        }
+        &-button {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          transform: translateY(50%);
+          z-index: 10;
+
+          &-prev,
+          &-next {
+            position: relative;
+            background-image: url(../img/index/newjobs_swiper_btn.png);
+            background-size: contain;
+            width: 76px;
+            height: 76px;
+            left: auto;
+            right: auto;
+            margin-top: 0;
+            border-radius: 50%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            @include mq(pc) {
+              &:hover {
+                transform: translateY(-4px);
+                box-shadow: 0px 10px 24px -16px #777777;
+              }
+            }
+            @include mq(sp) {
+              transform: scale(0.7);
+            }
+          }
+          &-prev {
+            transform: scale(-1,1);
+            margin-right: -12px;
+            @include mq(pc) {
+              &:hover {
+                transform: scale(-1,1) translateY(-4px);
+                box-shadow: 0px 10px 24px -16px #777777;
+              }
+            }
+            @include mq(sp) {
+              transform: scale(-0.7,0.7);
+              margin-right: -28px;
+            }
+          }
+
+          &-disabled {
+            position: relative;
+            opacity: 1;
+            z-index: -1;
+
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              background-color: rgba(#000,0.2);
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+  // 求人検索
+  .sec__jobSearch {
+    padding-top: 140px;
+    position: relative;
+    @include mq(sp) {
+      padding-top: 56px;
+    }
+
+    .jobSearch {
+      &__inner {
+        max-width: 1180px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        @include mq(sp) {
+          max-width: 640px;
+        }
+        @include mq(sp) {
+          display: block;
+        }
+      }
+      &__head {
+        flex: 0 0 38%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include mq(sp) {
+          flex-direction: row-reverse;
+          align-items: center;
+          justify-content: center;
+          max-width: 350px;
+          margin: 0 auto;
+        }
+
+        .illustArea {
+          margin-top: 56px;
+          position: relative;
+          @include mq(sp) {
+            margin-top: 0;
+            margin-right: 48px;
+          }
+
+          .illust {
+            &.-human {
+              img {
+                @include mq(sp) {
+                  height: 122px;
+                }
+              }
+            }
+            &.-ballon {
+              position: absolute;
+              top: -16px;
+              left: 130px;
+              opacity: 0;
+              transform: scale(0.7);
+              transition: transform 0.5s, opacity 0.5s;
+              transform-origin: left bottom;
+              @include mq(sp) {
+                left: 56px;
+              }
+
+              img {
+                @include mq(sp) {
+                  height: 75px;
+                }
+              }
+
+              &.js-active {
+                opacity: 1;
+                transform: scale(1);
+              }
+            }
+          }
+        }
+      }
+      &__body {
+        flex: 1 1 auto;
+        @include mq(sp) {
+          margin-top: 24px;
+        }
+      }
+    }
+  }
+
+  // お仕事紹介 / 一日の流れ
+  .sec__common {
+    // 共通
+    position: relative;
+    .innerWrap {
+      max-width: 1180px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      @include mq(sp) {
+        max-width: 640px;
+        display: block;
+      }
+    }
+    .imgArea {
+      flex: 0 0 60%;
+      max-width: 640px;
+      margin-right: 7.2%;
+      @include keepAspect(75%);
+      @include mq(sp) {
+        max-width: 400px;
+        margin: 0 auto;
+        margin-top: 16px;
+      }
+
+      // deco ボーダー
+      &::after {
+        content: '';
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        border-radius: 80px 0 80px 0;
+        border: 2px solid $primary-color;
+        position: absolute;
+        bottom: -8px;
+        right: -8px;
+        z-index: -1;
+      }
+
+      img {
+        border-radius: 80px 0 80px 0;
+      }
+    }
+    .txtArea {
+      flex: 1 1 auto;
+      margin-top: 48px;
+      margin-right: 7.2%;
+      @include mq(sp) {
+        margin-top: 0;
+        margin-right: 0;
+      }
+
+      .commonHead01 {
+        @include mq(sp) {
+          text-align: center;
+        }
+      }
+      .desc {
+        margin-top: 32px;
+        @include mq(sp) {
+          max-width: 400px;
+          margin: 0 auto;
+          margin-top: 28px;
+        }
+      }
+      .commonBtn01 {
+        margin-top: 36px;
+        @include mq(sp) {
+          margin-top: 20px;
+          text-align: center;
+        }
+      }
+    }
+
+    // rowReverse
+    &.-rowReverse {
+      .innerWrap {
+        flex-direction: row-reverse;
+        @include mq(sp) {
+          display: block;
+        }
+      }
+      .imgArea {
+        margin-right: 0;
+        margin-left: 7.2%;
+        @include mq(tab) {
+          margin-left: 6%;
+        }
+        @include mq(sp) {
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+      .txtArea {
+        margin-right: 0;
+        margin-left: 7.2%;
+        @include mq(sp) {
+          margin-left: 0;
+        }
+      }
+    }
+
+    // お仕事紹介
+    &.sec__jobs {
+      margin-top: 140px;
+      @include mq(sp) {
+        margin-top: 64px;
+      }
+
+      .commonHead01 {
+        .eng {
+          @include mq(sp) {
+            font-size: 4rem;
+          }
+        }
+      }
+    }
+    // 一日の流れ
+    &.sec__oneday {
+      margin-top: 110px;
+      @include mq(sp) {
+        margin-top: 56px;
+      }
+    }
+  }
+
+  // スタッフインタビュー
+  .sec__interview {
+    padding: 110px 0;
+    margin-top: 120px;
+    @include mq(sp) {
+      padding: 48px 0;
+      margin-top: 56px;
+    }
+
+    .interview {
+      &__inner {
+        max-width: 1100px;
+
+        // 白色背景
+        &:before {
+          content: '';
+          display: inline-block;
+          background-color: #fff;
+          width: 100vw;
+          height: calc(100% + 220px);
+          position: absolute;
+          top: calc(-220px / 2);
+          left: 100px + 40px;
+          z-index: -1;
+          pointer-events: none;
+          border-radius: 50px 0 0 50px;
+          @include mq(sp) {
+            // left: 64px;
+            left: 0;
+            // border-radius: 24px 0 0 24px;
+            border-radius: 0;
+            height: calc(100% + 96px);
+            top: calc(-96px / 2);
+          }
+        }
+      }
+      &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mq(sp) {
+          display: block;
+        }
+
+        .wrap {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          @include mq(sp) {
+            display: block;
+          }
+
+          .lead {
+            margin-left: 48px;
+            max-width: 450px;
+            @include mq(tab) {
+              max-width: 360px;
+            }
+            @include mq(sp) {
+              margin: 0 auto;
+              margin-top: 16px;
+            }
+          }
+        }
+      }
+      &__body {
+        margin-top: 56px;
+        @include mq(sp) {
+          margin-top: 44px;
+        }
+
+        .swiper {
+          width: 320px;
+          @include mq(sp) {
+            width: 80%;
+            max-width: 320px;
+            margin: 0 auto;
+            position: relative;
+          }
+
+          &-wrapper {
+            height: 100%;
+          }
+          &-slide {
+            height: auto;
+          }
+          &-button {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: absolute;
+            top: 14px;
+            right: 240px;
+            z-index: 10;
+            @include mq(tab) {
+              right: 220px;
+            }
+            @include mq(sp) {
+              position: absolute;
+              top: calc(50% - 56px);
+              left: 50%;
+              transform: translate(-50%,-50%);
+              width: 114%;
+              justify-content: space-between;
+            }
+
+            &-prev,
+            &-next {
+              position: relative;
+              background-image: url(../img/index/interview_swiper_btn.png);
+              background-size: contain;
+              width: 52px;
+              height: 52px;
+              left: auto;
+              right: auto;
+              margin-top: 0;
+              border-radius: 50%;
+              transition: transform 0.3s, box-shadow 0.3s;
+              @include mq(pc) {
+                &:hover {
+                  transform: translateY(-4px);
+                  box-shadow: 0px 10px 24px -16px #777777;
+                }
+              }
+              @include mq(sp) {
+                width: 48px;
+                height: 48px;
+              }
+            }
+            &-prev {
+              transform: scale(-1,1);
+              margin-right: 8px;
+              @include mq(pc) {
+                &:hover {
+                  transform: scale(-1,1) translateY(-4px);
+                  box-shadow: 0px 10px 24px -16px #777777;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .commonHead01 {
+        @include mq(sp) {
+          text-align: center;
+        }
+      }
+      .commonBtn01 {
+        @include mq(sp) {
+          margin-top: 28px;
+          text-align: center;
+        }
+      }
+    }
+  }
+
+  // 数字で見るJTPS
+  .sec__data {
+    margin-top: 140px;
+    position: relative;
+    @include mq(sp) {
+      margin-top: 56px;
+    }
+
+    .data {
+      &__inner {
+        max-width: 1180px;
+        @include mq(sp) {
+          max-width: 640px;
+        }
+      }
+      a {
+        background-color: $primary-color;
+        border-radius: 180px 0 180px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 88px 14%;
+        position: relative;
+        transition: transform 0.3s, box-shadow 0.3s;
+        @include mq(pc) {
+          &:hover {
+            transform: translateY(-4px);
+            box-shadow: 0px 10px 24px -16px #777777;
+
+            &:after {
+              bottom: 0;
+              right: 0;
+            }
+          }
+        }
+        @include mq(tab) {
+          padding: 80px 10%;
+        }
+        @include mq(sp) {
+          flex-direction: column;
+          border-radius: 50px 0 50px 0;
+          padding: 56px 8% 72px;
+        }
+
+        // 数字背景
+        &::before {
+          content: '';
+          display: inline-block;
+          background-image: url(../img/index/bg_num.png);
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 180px 0 180px 0;
+          opacity: 0.4;
+          @include mq(sp) {
+            border-radius: 50px 0 50px 0;
+          }
+        }
+        // 緑色 ボーダー
+        &::after {
+          content: "";
+          display: inline-block;
+          width: 98%;
+          height: 98%;
+          border-radius: 180px 0 180px 0;
+          border: 2px solid #00ae68;
+          position: absolute;
+          bottom: -8px;
+          right: -8px;
+          z-index: -1;
+          transition: all 0.3s;
+          @include mq(sp) {
+            border-radius: 50px 0 50px 0;
+          }
+        }
+      }
+
+      .illustArea {
+        position: relative;
+        @include mq(sp) {
+          position: absolute;
+          top: 36px;
+          left: 50%;
+        }
+
+        img {
+          @include mq(sp) {
+            height: 95px;
+          }
+        }
+      }
+      .txtArea {
+        position: relative;
+        max-width: 290px;
+        @include mq(sp) {
+          order: 1;
+        }
+        .desc {
+          color: #fff;
+          margin-top: 28px;
+        }
+      }
+      .btnArea {
+        position: relative;
+        flex: 0 0 52px;
+        @include mq(sp) {
+          order: 3;
+          position: absolute;
+          bottom: 18px;
+          right: 36px;
+          transform: scale(0.7);
+        }
+      }
+    }
+  }
+
+  // 装飾
+  .deco-leaf {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    @include mq(sp) {
+      transform: scale(0.6);
+    }
+
+    &01 {
+      top: -80px;
+      left: 0;
+      @include mq(sp) {
+        transform: scale(0.4);
+        transform-origin: top left;
+        top: -32px;
+        left: -16px;
+      }
+    }
+    &02 {
+      bottom: -270px;
+      right: 0;
+      @include mq(sp) {
+        transform-origin: bottom right;
+        bottom: -140px;
+      }
+    }
+    &03 {
+      top: -160px;
+      left: 0;
+      @include mq(sp) {
+        transform-origin: top left;
+        top: -96px;
+        left: -16px;
+      }
+    }
+    &04 {
+      bottom: -280px;
+      right: 0;
+      @include mq(sp) {
+        transform-origin: bottom right;
+        bottom: -150px;
+      }
+    }
+  }
+  .deco-triangle {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    @include mq(sp) {
+      transform: scale(0.5);
+    }
+
+    &01 {
+      top: -56px;
+      right: 0;
+      @include mq(sp) {
+        transform-origin: top right;
+        top: -48px;
+      }
+    }
+    &02 {
+      bottom: -150px;
+      left: 0;
+      @include mq(sp) {
+        transform-origin: bottom left;
+        bottom: -64px;
+      }
+    }
+  }
+
+}
