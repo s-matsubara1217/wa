@@ -133,14 +133,13 @@ a{
 	backdrop-filter: blur(16px);
 	opacity: 0;
 	visibility: hidden;
-	transform: translate(40px,0);
+	transform: translate(0,0);
 
 	.js-loaded &{
-		transition: opacity 0.5s ease,visibility 0.5s ease, transform 0.5s;
+		transition: opacity 0.5s ease,visibility 0.5s ease;
 	}
 	&.js-open {
 		opacity: 1;
-		transform: translate(0,0);
 		visibility: visible;
 	}
 	&__menu{
