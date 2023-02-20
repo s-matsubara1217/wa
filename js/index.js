@@ -1,55 +1,14 @@
 /*-------------------------------
-  メインビジュアル swiper
--------------------------------*/
-$(function () {
-  let swipeOption = {};
-  if ( $(".mainVisual__hero .swiper-slide").length > 1 ) {
-    // スライドが2枚以上
-    swipeOption = {
-      effect: 'fade',
-      fadeEffect: {
-        crossFade: true,
-      },
-      loop: true,
-      loopAdditionalSlides: 1,
-      speed: 2000,
-      autoplay: {
-        delay: 8000,
-        disableOnInteraction: false,
-        waitForTransition: false,
-      },
-
-      navigation: {
-        nextEl: ".mainVisual__hero .swiper-button-next",
-        prevEl: ".mainVisual__hero .swiper-button-prev",
-      },
-    }
-  } else {
-    // スライドが1枚
-    swipeOption = {
-      loop: false,
-      autoplay: false,
-      navigation: {
-        nextEl: ".mainVisual__hero .swiper-button-next",
-        prevEl: ".mainVisual__hero .swiper-button-prev",
-      },
-      watchOverflow: true,
-    }
-  }
-  const mainVisual__Swiper = new Swiper('.mainVisual__hero .swiper', swipeOption);
-});
-
-/*-------------------------------
   新着求人情報 swiper
 -------------------------------*/
 const newJobs__Swiper = new Swiper('.newJobs__swiper', {
   spaceBetween: 28,
   speed: 500,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-    waitForTransition: false,
-  },
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  //   waitForTransition: false,
+  // },
   breakpoints: {
     835: {
       spaceBetween: 24,
@@ -60,6 +19,46 @@ const newJobs__Swiper = new Swiper('.newJobs__swiper', {
     nextEl: '.newJobs__swiper-button-next',
     prevEl: '.newJobs__swiper-button-prev',
   },
+});
+
+
+/*-------------------------------
+  インタビュー swiper
+-------------------------------*/
+const interview__Swiper = new Swiper('.interview__swiper', {
+  spaceBetween: 72,
+  speed: 500,
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  //   waitForTransition: false,
+  // },
+  breakpoints: {
+    835: {
+      spaceBetween: 40,
+    }
+  },
+  pagination: {
+    el: ".interview__swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.interview__swiper-button-next',
+    prevEl: '.interview__swiper-button-prev',
+  },
+});
+//画面に現れるまでswiperを停止
+// interview__Swiper.autoplay.stop();
+$(window).on('scroll', function () {
+  let position = $('.interview__swiper').offset().top - $(window).innerHeight() + 100,
+  scrollTop = $(window).scrollTop();
+  if (scrollTop > position) {
+    //画面に現れたらswiperを開始
+    // interview__Swiper.autoplay.start();
+  } else {
+    // 画面外にスクロールしたらswiperを停止
+    // interview__Swiper.autoplay.stop();
+  }
 });
 
 /*-------------------------------

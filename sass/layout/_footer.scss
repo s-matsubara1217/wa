@@ -7,7 +7,200 @@
 // リクルート
 // ==========================================*/
 .sec__recruit{
+  position: relative;
+  border-top: 5px solid;
+  padding-top: 100px;
+  @include mq(sp) {
+    padding-top: 72px;
+  }
+
+  // 背景文字 RECRUIT
+  &::before {
+    content: 'RECRUIT';
+    display: inline-block;
+    font-family: $eng;
+    font-size: 24rem;
+    line-height: 1;
+    font-weight: bold;
+    color: #ecb910;
+    position: absolute;
+    top: -32px;
+    left: 50%;
+    transform: translateX(-50%);
+    @include mq(sp) {
+      font-size: 8rem;
+      top: -10px;
+    }
+  }
+  // ボーダー bottom
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    height: 5px;
+    background-color: $txt-color;
+    position: absolute;
+    bottom: 72px;
+    left: 0;
+  }
+
   .recruit {
+    &__inner {
+      max-width: 1050px;
+    }
+
+    &__body {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      @include mq(sp) {
+        flex-direction: column-reverse;
+      }
+
+      .imgArea {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        max-width: 528px;
+        margin-left: -24px;
+        @include mq(sp) {
+          justify-content: center;
+          margin-left: auto;
+          margin-right: auto;
+          margin-top: 24px;
+          width: 90%;
+        }
+
+        .img {
+          position: relative;
+          img {
+            @include mq(sp) {
+              max-height: 300px;
+            }
+          }
+        }
+      }
+      .txtArea {
+        @include mq(sp) {
+          margin-right: auto;
+          margin-left: auto;
+        }
+
+        .eng {
+          font-size: 1.6rem;
+          @include mq(sp) {
+            font-size: 1.5rem;
+          }
+        }
+        .lead {
+          font-size: 3.4rem;
+          line-height: 1.6;
+          font-weight: bold;
+          margin-top: 8px;
+          @include mq(tab) {
+            font-size: 3rem;
+          }
+          @include mq(sp) {
+            font-size: 2.4rem;
+            margin-top: 6px;
+          }
+        }
+        .commonBtn01 {
+          margin-top: 32px;
+          @include mq(sp) {
+            margin-top: 24px;
+          }
+        }
+      }
+    }
+    &__searchBox {
+      background-color: $bg-color02;
+      border: 5px solid;
+      border-radius: 20px;
+      padding: 36px 5%;
+      position: relative;
+      overflow: hidden;
+      z-index: 3;
+      margin-top: -96px;
+      @include mq(sp) {
+        margin-top: -72px;
+        padding: 28px 8% 32px;
+      }
+
+      // 背景画像 ロゴ
+      &::before {
+        content: '';
+        display: inline-block;
+        background-image: url(../../img/common/bg_logo.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 313px;
+        height: 206px;
+        position: absolute;
+        bottom: -24px;
+        right: -24px;
+        @include mq(sp) {
+          transform: scale(0.5);
+          transform-origin: bottom right;
+          bottom: -8px;
+          right: -8px;
+        }
+      }
+
+      .searchList {
+        &__item {
+          display: flex;
+          justify-content: flex-start;
+          align-items: flex-start;
+          margin-top: 28px;
+          @include mq(sp) {
+            display: block;
+            margin-top: 20px;
+          }
+          &:first-child {
+            margin-top: 0;
+          }
+
+          .head {
+            flex: 0 0 160px;
+            flex-shrink: 0;
+            margin-right: 3%;
+            font-size: 1.6rem;
+            font-weight: bold;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            @include mq(sp) {
+              font-size: 1.5rem;
+            }
+            // ●
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 12px;
+              height: 12px;
+              background-color: $primary-color;
+              border-radius: 50%;
+              margin-right: 8px;
+              flex-shrink: 0;
+              margin-top: 10px;
+            }
+          }
+          .list {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            margin: -2px -7px;
+
+            &__item {
+              margin: 2px 7px;
+              border-bottom: 1px solid;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -15,11 +208,102 @@
 // フッター
 // ==========================================*/
 .footer{
+  padding-top: 60px;
+  padding-bottom: 110px + 40px;
+  @include mq(sp) {
+    padding-top: 40px;
+    padding-bottom: 100px;
+  }
+
+  &__sub {
+    margin-top: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include mq(sp) {
+      flex-direction: column;
+      margin-top: 28px;
+    }
+  }
+
+  &__logo {
+    img {
+      @include mq(sp) {
+        height: 70px;
+      }
+    }
+  }
+  &__nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 32px;
+    background-color: #e9b610;
+    padding: 24px;
+    border-radius: 100px;
+    @include mq(sp) {
+      margin-top: 28px;
+      padding: 20px 8%;
+      border-radius: 20px;
+    }
+
+    &__list {
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      @include mq(sp) {
+        margin: -2px -8px;
+      }
+      &__item {
+        padding: 0 32px;
+        position: relative;
+        font-size: 1.6rem;
+        font-weight: bold;
+        @include mq(sp) {
+          font-size: 1.5rem;
+          padding: 0;
+          margin: 2px 8px;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+        // スラッシュ
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 1px;
+          height: 32px;
+          background-color: $txt-color;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translateY(-50%) skew(-20deg);
+          @include mq(sp) {
+            height: 20px;
+            content: none;
+          }
+        }
+        &:last-child {
+          &::before {
+            content: none;
+          }
+        }
+      }
+    }
+  }
   &__sns {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
+    @include mq(pc) {
+      position: absolute;
+      top: 36px;
+      right: 40px;
+    }
+    @include mq(sp) {
+      margin-top: 28px;
+    }
     .head {
       font-weight: 600;
       margin-right: 12px;
@@ -54,6 +338,48 @@
             }
           }
         }
+      }
+    }
+  }
+  &__cr {
+    font-size: 1.4rem;
+    font-weight: 400;
+    @include mq(sp) {
+      order: 3;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+  }
+  &__ga {
+    margin-left: 32px;
+    margin-right: auto;
+    @include mq(sp) {
+      order: 2;
+      margin-left: 0;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    a {
+      color: rgba($txt-color,60%);
+      border-bottom: 1px solid;
+      display: inline-block;
+    }
+  }
+  &__corporate {
+    @include mq(sp) {
+      order: 1;
+    }
+    a {
+      // アイコン external
+      &:after {
+        content: '';
+        display: inline-block;
+        background-image: url(../img/common/ico_external.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 15px;
+        margin-left: 8px;
       }
     }
   }

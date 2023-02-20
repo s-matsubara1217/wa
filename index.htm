@@ -57,15 +57,12 @@
 <body class="front-page">
 
 	<!-- ハンバーガーメニュー（共通） -->
-	<div class="hamburger js-open">
+	<div class="hamburger">
 		<div class="hamburger__menu">
 			<div class="hamburger__menu__inner">
-				<div class="hamburger__menu__logo logoTxt">
+				<div class="hamburger__menu__logo">
 					<a href="index.htm" class="ro">
-						<div class="hamburger__menu__logo__main logoTxt__main">
-							<img src="img/common/logo_hd.png" alt="ジェイティプラントサービス株式会社" height="22">
-						</div>
-						<span class="hamburger__menu__logo__sub logoTxt__sub">関西支店 採用サイト</span>
+						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="107">
 					</a>
 				</div>
 				<div class="hamburger__menu__nav">
@@ -113,7 +110,7 @@
 			<div class="header__inner">
 				<div class="header__logo">
 					<a href="index.htm">
-						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="106">
+						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="107">
 					</a>
 				</div>
 				<nav class="header__nav">
@@ -142,129 +139,467 @@
 
 		<!-- メインビジュアル -->
 		<div class="mainVisual">
+			メインビジュアル
 		</div>
 
 		<!-- コンテンツ -->
-		<main class="main" id="main" style="min-height: 100vh;">
+		<main class="main" id="main">
 
 			<!-- 求人検索 -->
-			<section class="sec__jobSearch" style="display: none;">
+			<section class="sec__jobSearch">
 				<div class="jobSearch">
 					<div class="jobSearch__inner innerWrap">
-						<div class="jobSearch__head">
-							<div class="commonHead01">
-								<span class="eng anime">Job Search</span>
-								<h2 class="ja anime">求人検索</h2>
+						<div class="jobSearch__box">
+							<div class="jobSearch__head">
+								<div class="commonHead01 -row">
+									<span class="eng">JOB SEARCH</span>
+									<h2 class="ja">求人を探す</h2>
+								</div>
+								<div class="commonLink01">
+									<a href="kyjin_l.htm">全ての求人を見る</a>
+								</div>
 							</div>
-						</div>
-						<div class="jobSearch__body">
-							<form class="custom-form" name="" action="" method="get">
-								<div class="custom-form_inner">
-									<!-- 勤務地 -->
-									<div class="custom-form_parts">
-										<p class="parts_ttl">勤務地</p>
-										<div class="form_parts_inner">
-											<div class="pull-down">
-												<select>
-													<option value="" selected="selected">都道府県を選択</option>
-													<option value="" id="">京都府</option>
-												</select>
+							<div class="jobSearch__body">
+								<form class="custom-form" name="" action="" method="get">
+									<div class="custom-form_inner">
+										<!-- 勤務地 -->
+										<div class="custom-form_parts">
+											<p class="parts_ttl">勤務地</p>
+											<div class="form_parts_inner">
+												<div class="pull-down">
+													<select>
+														<option value="" selected="selected">都道府県を選択</option>
+														<option value="" id="">和歌山</option>
+													</select>
+												</div>
+												<div class="check-box selCity-box">
+													<span class="selCity_alert">上の都道府県を選択してください</span>
+													<ul class="category_list">
+														<li>
+															<input type="checkbox" id="area_a" name="" />
+															<label for="area_a">
+																御坊市
+															</label>
+														</li>
+														<li>
+															<input type="checkbox" id="area_b" name="" />
+															<label for="area_b">
+																橋本市
+															</label>
+														</li>
+														<li>
+															<input type="checkbox" id="area_c" name="" />
+															<label for="area_c">
+																和歌山市
+															</label>
+														</li>
+													</ul>
+												</div>
 											</div>
-											<div class="check-box selCity-box">
-												<span class="selCity_alert">上の都道府県を選択してください</span>
+										</div>
+										<!-- //勤務地 -->
+										<!-- 職種 -->
+										<div class="custom-form_parts">
+											<p class="parts_ttl">職種</p>
+											<div class="form_parts_inner">
 												<ul class="category_list">
 													<li>
-														<input type="checkbox" id="area_a" name="" />
-														<label for="area_a">
-															京都市伏見区
+														<input type="checkbox" id="occupation01" name="" />
+														<label for="occupation01">
+															レジ販売スタッフ
+														</label>
+													</li>
+													<li>
+														<input type="checkbox" id="occupation02" name="" />
+														<label for="occupation02">
+															ピットスタッフ
 														</label>
 													</li>
 												</ul>
 											</div>
 										</div>
-									</div>
-									<!-- //勤務地 -->
-									<!-- 職種 -->
-									<div class="custom-form_parts">
-										<p class="parts_ttl">職種</p>
-										<div class="form_parts_inner">
-											<ul class="category_list">
-												<li>
-													<input type="checkbox" id="occupation01" name="" />
-													<label for="occupation01">
-														たばこ製造工場の構内作業
-													</label>
-												</li>
-												<li>
-													<input type="checkbox" id="occupation02" name="" />
-													<label for="occupation02">
-														製造補助スタッフ
-													</label>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<!-- 職種 -->
-									<!-- 雇用形態 -->
-									<div class="custom-form_parts">
-										<p class="parts_ttl">雇用形態</p>
-										<div class="form_parts_inner">
-											<ul class="category_list">
-												<li>
-													<input type="checkbox" id="status01" name="" />
-													<label for="status01">
-														契約社員
-													</label>
-												</li>
-												<li>
-													<input type="checkbox" id="status02" name="" />
-													<label for="status02">
-														パート
-													</label>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<!-- //雇用形態 -->
-									<!-- フリーワード -->
-									<div class="custom-form_parts -freeWord">
-										<p class="parts_ttl">フリーワード</p>
-										<div class="form_parts_inner">
-											<input class="searchWord" type="search" name="" placeholder="フリーワードを入力してください" title="フリーワードを入力してください" onfocus="" onblur="">
-
-											<div class="custom-form_searth_btn">
-												<span class="btn_cover">
-													<input type="submit" value="検索">
-												</span>
+										<!-- 職種 -->
+										<!-- 雇用形態 -->
+										<div class="custom-form_parts">
+											<p class="parts_ttl">雇用形態</p>
+											<div class="form_parts_inner">
+												<ul class="category_list">
+													<li>
+														<input type="checkbox" id="status01" name="" />
+														<label for="status01">
+															正社員
+														</label>
+													</li>
+													<li>
+														<input type="checkbox" id="status02" name="" />
+														<label for="status02">
+															アルバイト
+														</label>
+													</li>
+													<li>
+														<input type="checkbox" id="status03" name="" />
+														<label for="status03">
+															パート
+														</label>
+													</li>
+												</ul>
 											</div>
 										</div>
+										<!-- //雇用形態 -->
+										<!-- フリーワード -->
+										<div class="custom-form_parts -freeWord">
+											<p class="parts_ttl">フリーワード</p>
+											<div class="form_parts_inner">
+												<input class="searchWord" type="search" name="" placeholder="フリーワードを入力してください" title="フリーワードを入力してください" onfocus="" onblur="">
+
+												<div class="custom-form_searth_btn">
+													<span class="btn_cover">
+														<input type="submit" value="検索">
+													</span>
+												</div>
+											</div>
+										</div>
+										<!-- //フリーワード -->
 									</div>
-									<!-- //フリーワード -->
-								</div>
-							</form>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-
 			<!-- 新着求人情報 -->
+			<section class="sec__newJobs">
+				<div class="newJobs">
+					<div class="newJobs__inner innerWrap">
+						<div class="newJobs__head">
+							<div class="commonHead01 -row">
+								<span class="eng">NEW JOBS</span>
+								<h2 class="ja">新着求人情報</h2>
+							</div>
+							<div class="commonLink01">
+								<a href="whatsnew_a_type.htm">一覧を見る</a>
+							</div>
+						</div>
+						<div class="newJobs__body">
+							<div class="swiper newJobs__swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide newJobs__swiper-slide">
+										<a href="whatsnew_a_type.htm">
+											<div class="imgArea">
+												<div class="img">
+													<img src="img/index/newjobs01.jpg" alt="イメージ" class="ofi" loading="lazy">
+												</div>
+											</div>
+											<div class="txtArea">
+												<div class="info">
+													<span class="status">正</span>
+													<span class="occupation">ピットスタッフ</span>
+												</div>
+												<p class="lead">
+													＼イエローハットのpitスタッフ／3級以上の整備士資格をお持ちの方！残業少な＼イエローハットのpitスタッフ／3級以上の整備士資格をお持ちの方！残業少な
+												</p>
+												<span class="date">2023.01.26</span>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide newJobs__swiper-slide">
+										<a href="whatsnew_a_type.htm">
+											<div class="imgArea">
+												<div class="img">
+													<img src="img/index/newjobs02.jpg" alt="イメージ" class="ofi" loading="lazy">
+												</div>
+											</div>
+											<div class="txtArea">
+												<div class="info">
+													<span class="status">ア</span>
+													<span class="status">パ</span>
+													<span class="occupation">レジ販売スタッフ</span>
+												</div>
+												<p class="lead">
+													＼イエローハットのpitスタッフ／3級以上の整備士資格をお持ちの方！残業少な＼イエローハットのpitスタッフ／3級以上の整備士資格をお持ちの方！残業少な
+												</p>
+												<span class="date">2023.01.26</span>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="swiper-button newJobs__swiper-button">
+									<div class="swiper-button-prev newJobs__swiper-button-prev"></div>
+									<div class="swiper-button-next newJobs__swiper-button-next"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<!-- お仕事紹介 -->
+			<section class="sec__jobs">
+				<div class="jobs">
+					<div class="jobs__inner innerWrap">
+						<div class="imgArea">
+							<div class="img img01">
+								<img src="img/index/jobs01.jpg" alt="イメージ" class="ofi" loading="lazy">
+								<span class="occupation">レジ販売スタッフ</span>
+							</div>
+							<div class="img img02">
+								<img src="img/index/jobs02.jpg" alt="イメージ" class="ofi" loading="lazy">
+								<span class="occupation">レジ販売スタッフ</span>
+							</div>
+						</div>
+						<div class="txtArea">
+							<div class="commonHead01">
+								<span class="eng">JOB <br>INTRODUCTION</span>
+								<h2 class="ja">お仕事紹介</h2>
+							</div>
+							<p class="lead">
+								自分の成長が楽しい。<br>
+								そんな環境があります。
+							</p>
+							<p class="desc">
+								ダミー）大学生や主婦といったアルバイトの方も、転職されてきた正社員の方も、充実の研修で車の知識ゼロから始めて、活躍中の方が多数在籍しています。
+							</p>
+							<div class="commonBtn01">
+								<a href="jobs.htm">
+									<span class="txt">詳しく見る</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<!-- スタッフインタビュー -->
+			<section class="sec__interview">
+				<div class="interview">
+					<div class="interview__inner innerWrap">
+						<div class="interview__head">
+							<div class="commonHead01 -row">
+								<span class="eng">INTERVIEW</span>
+								<h2 class="ja">スタッフインタビュー</h2>
+							</div>
+							<div class="commonBtn01">
+								<a href="interview_l.htm">
+									<span class="txt">一覧を見る</span>
+								</a>
+							</div>
+						</div>
+						<div class="interview__body">
+							<div class="swiper interview__swiper">
+								<div class="swiper-wrapper">
+									<div class="swiper-slide interview__swiper-slide">
+										<a href="interivew_l.htm">
+											<p class="lead">
+												ゼロからのスタート。<br>
+												だからこそ常に前向きに！
+											</p>
+											<div class="imgArea">
+												<div class="budge">
+													<span class="icon">
+														<img src="img/common/ico_tools.png" alt="アイコン" height="25">
+													</span>
+													<span class="txt">
+														ピット<br>
+														スタッフ
+													</span>
+												</div>
+												<div class="img">
+													<img src="img/index/interview01.jpg" alt="イメージ" class="ofi" loading="lazy">
+												</div>
+											</div>
+											<div class="nameArea">
+												<span class="status">正社員</span>
+												<span class="name">
+													<b>Yさん</b>（勤続年数7年）
+												</span>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide interview__swiper-slide">
+										<a href="interview_l.htm">
+											<p class="lead">
+												ゼロからのスタート。<br>
+												だからこそ常に前向きに！
+											</p>
+											<div class="imgArea">
+												<div class="budge">
+													<span class="icon">
+														<img src="img/common/ico_pos.png" alt="アイコン" height="25">
+													</span>
+													<span class="txt">
+														レジ販売<br>
+														スタッフ
+													</span>
+												</div>
+												<div class="img">
+													<img src="img/index/interview02.jpg" alt="イメージ" class="ofi" loading="lazy">
+												</div>
+											</div>
+											<div class="nameArea">
+												<span class="status">正社員</span>
+												<span class="name">
+													<b>Yさん</b>（勤続年数7年）
+												</span>
+											</div>
+										</a>
+									</div>
+									<div class="swiper-slide interview__swiper-slide">
+										<a href="interview_l.htm">
+											<p class="lead">
+												ゼロからのスタート。<br>
+												だからこそ常に前向きに！
+											</p>
+											<div class="imgArea">
+												<div class="budge">
+													<span class="icon">
+														<img src="img/common/ico_tools.png" alt="アイコン" height="25">
+													</span>
+													<span class="txt">
+														ピット<br>
+														スタッフ
+													</span>
+												</div>
+												<div class="img">
+													<img src="img/index/interview03.jpg" alt="イメージ" class="ofi" loading="lazy">
+												</div>
+											</div>
+											<div class="nameArea">
+												<span class="status">正社員</span>
+												<span class="name">
+													<b>Yさん</b>（勤続年数7年）
+												</span>
+											</div>
+										</a>
+									</div>
+								</div>
+								<div class="swiper-pagination interview__swiper-pagination"></div>
+								<div class="swiper-button interview__swiper-button">
+									<div class="swiper-button-prev interview__swiper-button-prev"></div>
+									<div class="swiper-button-next interview__swiper-button-next"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<!-- その他 -->
-				<!-- お店の一日 -->
-				<!-- 会社概要 -->
+			<section class="sec__others">
+				<div class="others">
+					<div class="others__inner innerWrap">
+						<!-- お店の一日 -->
+						<section class="sec__oneday">
+							<div class="oneday">
+								<a href="oneday.htm">
+									<div class="imgAraa">
+										<div class="img">
+											<img src="img/index/oneday01.jpg" alt="イメージ" class="ofi" loading="lazy">
+										</div>
+										<div class="img">
+											<img src="img/index/oneday02.jpg" alt="イメージ" class="ofi" loading="lazy">
+										</div>
+										<div class="img">
+											<img src="img/index/oneday03.jpg" alt="イメージ" class="ofi" loading="lazy">
+										</div>
+									</div>
+									<div class="txtArea">
+										<div class="commonHead01">
+											<span class="eng">ONE DAY</span>
+											<h2 class="ja">お店の一日</h2>
+										</div>
+									</div>
+								</a>
+							</div>
+						</section>
+						<!-- 会社概要 -->
+						<section class="sec__company">
+							<div class="company">
+								<a href="company.htm">
+									<div class="logo">
+										<img src="img/common/logo.png" alt="ロゴ" height="69">
+									</div>
+									<div class="commonHead01 -center">
+										<span class="eng">COMPANY</span>
+										<h2 class="ja">会社概要</h2>
+									</div>
+								</a>
+							</div>
+						</section>
+					</div>
+				</div>
+			</section>
 
 		</main>
 
 		<!-- リクルート（共通） -->
 		<section class="sec__recruit">
 			<div class="recruit">
+				<div class="recruit__inner innerWrap">
+					<div class="recruit__body">
+						<div class="imgArea">
+							<div class="img">
+								<img src="img/common/recruit_human.png" alt="人物イメージ" class="ofi" loading="lazy">
+							</div>
+						</div>
+						<div class="txtArea">
+							<span class="eng">RECRUIT</span>
+							<p class="lead">
+								イエローハットで<br>
+								ゼロから車のプロになろう！
+							</p>
+							<div class="commonBtn01 -recruit">
+								<a href="kyujin_l.htm">
+									<span class="icon">
+										<img src="img/common/ico_jobsearch.png" alt="アイコン" height="25">
+									</span>
+									<span class="txt">求人情報を見る</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="recruit__searchBox">
+						<ul class="searchList">
+							<li class="searchList__item">
+								<div class="head">勤務地から探す</div>
+								<ul class="list">
+									<li class="list__item"><a href="#">和歌山県</a></li>
+									<li class="list__item"><a href="#">大阪府</a></li>
+								</ul>
+							</li>
+							<li class="searchList__item">
+								<div class="head">職種から探す</div>
+								<ul class="list">
+									<li class="list__item"><a href="#">ピットスタッフ</a></li>
+									<li class="list__item"><a href="#">レジ販売スタッフ</a></li>
+								</ul>
+							</li>
+							<li class="searchList__item">
+								<div class="head">雇用形態から探す</div>
+								<ul class="list">
+									<li class="list__item"><a href="#">正社員</a></li>
+									<li class="list__item"><a href="#">アルバイト</a></li>
+									<li class="list__item"><a href="#">パート</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</section>
-
 		<!-- フッター（共通） -->
 		<footer class="footer">
 			<div class="footer__inner innerWrap">
+				<div class="footer__logo">
+					<a href="index.htm">
+						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="107">
+					</a>
+				</div>
+				<nav class="footer__nav">
+					<ul class="footer__nav__list">
+						<li class="footer__nav__list__item"><a href="kyujin_l.htm">求人情報</a></li>
+						<li class="footer__nav__list__item"><a href="jobs.htm">仕事紹介</a></li>
+						<li class="footer__nav__list__item"><a href="interview_l.htm">スタッフインタビュー</a></li>
+						<li class="footer__nav__list__item"><a href="oneday.htm">お店の一日</a></li>
+						<li class="footer__nav__list__item"><a href="comapany.htm">会社概要</a></li>
+					</ul>
+				</nav>
 				<div class="footer__sns">
 					<div class="head">SHARE</div>
 					<ul class="list">
@@ -285,9 +620,17 @@
 						</li>
 					</ul>
 				</div>
+				<div class="footer__sub">
+					<div class="footer__cr">&copy; 株式会社和歌山イエローハット</div>
+					<div class="footer__ga">
+						<a href="#">Googleアナリティクスの利用について</a>
+					</div>
+					<div class="footer__corporate">
+						<a href="#">イエローハット公式サイト</a>
+					</div>
+				</div>
 			</div>
 		</footer>
-
 		<!-- ページトップ（共通） -->
 		<span class="pagetop">
 			<a href="#container">
