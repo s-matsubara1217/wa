@@ -12,7 +12,7 @@
   left: 0;
   width: 100%;
   z-index: 10000;
-  
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -68,13 +68,17 @@
     }
   }
   &__hamburger{
+    position: absolute;
+    top: 32px;
+    right: 32px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 84px;
     height: 84px;
-    background-color: #fff;
+    background-color: #262626;
+    border-radius: 50%;
     cursor: pointer;
     pointer-events: auto;
     transition: color 0.4s, background 0.3s;
@@ -83,9 +87,6 @@
     }
     @include mq(pc) {
       &:hover {
-        span {
-          background-color: $primary-color;
-        }
       }
     }
     @include mq(sp) {
@@ -96,8 +97,8 @@
       width: 28px;
       height: 2px;
       margin: 3px 0;
-      background: $txt-color;
-      transition: background 0.4s;
+      background: #fff;
+      transition: background 0.4s,;
       @include mq(sp) {
         width: 24px;
         margin: 2px 0;

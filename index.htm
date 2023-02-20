@@ -57,7 +57,7 @@
 <body class="front-page">
 
 	<!-- ハンバーガーメニュー（共通） -->
-	<div class="hamburger">
+	<div class="hamburger js-open">
 		<div class="hamburger__menu">
 			<div class="hamburger__menu__inner">
 				<div class="hamburger__menu__logo logoTxt">
@@ -147,8 +147,112 @@
 		<!-- コンテンツ -->
 		<main class="main" id="main" style="min-height: 100vh;">
 
-			<!-- 新着求人情報 -->
+			<!-- 求人検索 -->
+			<section class="sec__jobSearch" style="display: none;">
+				<div class="jobSearch">
+					<div class="jobSearch__inner innerWrap">
+						<div class="jobSearch__head">
+							<div class="commonHead01">
+								<span class="eng anime">Job Search</span>
+								<h2 class="ja anime">求人検索</h2>
+							</div>
+						</div>
+						<div class="jobSearch__body">
+							<form class="custom-form" name="" action="" method="get">
+								<div class="custom-form_inner">
+									<!-- 勤務地 -->
+									<div class="custom-form_parts">
+										<p class="parts_ttl">勤務地</p>
+										<div class="form_parts_inner">
+											<div class="pull-down">
+												<select>
+													<option value="" selected="selected">都道府県を選択</option>
+													<option value="" id="">京都府</option>
+												</select>
+											</div>
+											<div class="check-box selCity-box">
+												<span class="selCity_alert">上の都道府県を選択してください</span>
+												<ul class="category_list">
+													<li>
+														<input type="checkbox" id="area_a" name="" />
+														<label for="area_a">
+															京都市伏見区
+														</label>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+									<!-- //勤務地 -->
+									<!-- 職種 -->
+									<div class="custom-form_parts">
+										<p class="parts_ttl">職種</p>
+										<div class="form_parts_inner">
+											<ul class="category_list">
+												<li>
+													<input type="checkbox" id="occupation01" name="" />
+													<label for="occupation01">
+														たばこ製造工場の構内作業
+													</label>
+												</li>
+												<li>
+													<input type="checkbox" id="occupation02" name="" />
+													<label for="occupation02">
+														製造補助スタッフ
+													</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- 職種 -->
+									<!-- 雇用形態 -->
+									<div class="custom-form_parts">
+										<p class="parts_ttl">雇用形態</p>
+										<div class="form_parts_inner">
+											<ul class="category_list">
+												<li>
+													<input type="checkbox" id="status01" name="" />
+													<label for="status01">
+														契約社員
+													</label>
+												</li>
+												<li>
+													<input type="checkbox" id="status02" name="" />
+													<label for="status02">
+														パート
+													</label>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<!-- //雇用形態 -->
+									<!-- フリーワード -->
+									<div class="custom-form_parts -freeWord">
+										<p class="parts_ttl">フリーワード</p>
+										<div class="form_parts_inner">
+											<input class="searchWord" type="search" name="" placeholder="フリーワードを入力してください" title="フリーワードを入力してください" onfocus="" onblur="">
 
+											<div class="custom-form_searth_btn">
+												<span class="btn_cover">
+													<input type="submit" value="検索">
+												</span>
+											</div>
+										</div>
+									</div>
+									<!-- //フリーワード -->
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 新着求人情報 -->
+			<!-- お仕事紹介 -->
+			<!-- スタッフインタビュー -->
+			<!-- その他 -->
+				<!-- お店の一日 -->
+				<!-- 会社概要 -->
 
 		</main>
 

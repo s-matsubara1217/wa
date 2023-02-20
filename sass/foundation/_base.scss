@@ -133,13 +133,14 @@ a{
 	backdrop-filter: blur(16px);
 	opacity: 0;
 	visibility: hidden;
-	transform: translate(0,0);
+	transform: translate(40px,0);
 
 	.js-loaded &{
-		transition: opacity 0.5s ease,visibility 0.5s ease;
+		transition: opacity 0.5s ease,visibility 0.5s ease, transform 0.5s;
 	}
-	&.js-open{
+	&.js-open {
 		opacity: 1;
+		transform: translate(0,0);
 		visibility: visible;
 	}
 	&__menu{
@@ -278,16 +279,15 @@ a{
 			align-items: center;
 			width: 84px;
 			height: 84px;
+			background-color: #262626;
+			border-radius: 50%;
 			position: absolute;
-			top: 0;
-			right: 0;
+			top: 32px;
+			right: 32px;
 			cursor: pointer;
 			transition: background 0.3s;
 			@include mq(pc) {
 				&:hover {
-					span {
-						background-color: $primary-color;
-					}
 				}
 			}
 			@include mq(sp) {
@@ -299,7 +299,7 @@ a{
 				display: block;
 				width: 28px;
 				height: 2px;
-				background: $txt-color;
+				background: #fff;
 				transition: background 0.4s;
 				@include mq(sp) {
 					width: 24px;
