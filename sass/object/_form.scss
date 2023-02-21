@@ -122,27 +122,6 @@ body{
 	font-weight: bold;
 	.search_item{
 		margin-bottom: 5px;
-		&.-area{
-			.parts_ttl{
-				&::before{
-					background-image: url(../img/common/ico_place.png);
-				}
-			}
-		}
-		&.-job{
-			.parts_ttl{
-				&::before{
-					background-image: url(../img/common/ico_job.png);
-				}
-			}
-		}
-		&.-type{
-			.parts_ttl{
-				&::before{
-					background-image: url(../img/common/ico_type.png);
-				}
-			}
-		}
 		&.-keyword{
 			display: flex;
 			align-items: flex-end;
@@ -153,11 +132,6 @@ body{
 			}
 			.custom-form_parts{
 				flex: 1 1 auto;
-			}
-			.parts_ttl{
-				&::before{
-					background-image: url(../img/common/ico_word.png);
-				}
 			}
 			.custom-form_searth_btn{
 				flex: 0 0 160px;
@@ -193,9 +167,21 @@ body{
 		display: flex;
 		align-items: center;
 		font-weight: bold;
-		flex: 0 0 130px;
+		flex: 0 0 160px;
 		margin-top: 8px;
 		font-size: 1.6rem;
+
+		// ●
+		&::before {
+			content: '';
+			display: inline-block;
+			width: 13px;
+			height: 13px;
+			background-color: $primary-color;
+			border-radius: 50%;
+			margin-right: 8px;
+			flex-shrink: 0;
+		}
 		@include mq(sp){
 			font-size: 1.5rem;
 			margin-top: 0;
@@ -241,15 +227,13 @@ body{
 			height: 0;
 			border-style: solid;
 			border-width: 7px 5px 0 5px;
-			border-color: $primary-color transparent transparent transparent;
+			border-color: $txt-color transparent transparent transparent;
 		}
 		select{
 			padding: 9px 48px 9px 20px;
-			background: #fff;
+			background: #f2f2f2;
 			border-radius: 5px;
 			transition: background 0.24s;
-			box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.1);
-			border: 1px solid $border-color;
 			@include mq(pc) {
 				&:hover{
 					background: darken(#fff,3%);
@@ -272,8 +256,8 @@ body{
 			line-height: 1.75;
 			padding: 10px 20px 10px 42px;
 			background: #fff;
-			// border: 1px solid $border-color;
-			box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.1);
+			border: 1px solid $border-color;
+			// box-shadow: 0px 4px 16px -4px rgba(0, 0, 0, 0.1);
 			border-radius: 5px;
 			transition: all 0.2s;
 			cursor: pointer;
@@ -312,7 +296,7 @@ body{
 				z-index: 2;
 				width: 5px;
 				height: 9px;
-				color: $primary-color;
+				color: $txt-color;
 				border-bottom: 2px solid;
 				border-right: 2px solid;
 				transform: rotate(-180deg);
@@ -327,7 +311,7 @@ body{
 			}
 		}
 		input[type=checkbox]:checked + label {
-			color: #ffffff;
+			color: $txt-color;
 			background: $primary-color;
 			border-color: transparent;
 			box-shadow: none;
@@ -355,12 +339,12 @@ body{
 
 		.searchWord {
 			padding: 9px 20px;
-			background: #dee3e2;
+			background: #f2f2f2;
 			border-radius: 5px;
 			transition: background 0.24s;
 			@include mq(pc) {
 				&:hover{
-					background: darken(#dee3e2,3%);
+					background: darken(#f2f2f2,3%);
 				}
 			}
 
@@ -372,14 +356,6 @@ body{
 			flex: 0 0 140px;
 			height: 48px;
 			margin-left: 10px;
-			transition: all 0.3s;
-			@include mq(pc) {
-				&:hover {
-					transform: translateY(-4px);
-					box-shadow: 0px 10px 24px -16px #777777;
-					border-radius: 100px;
-				}
-			}
 			@include mq(sp) {
 				max-width: 200px;
 				margin: 0 auto;
@@ -388,7 +364,7 @@ body{
 
 			.btn_cover {
 				display: block;
-				background: $primary-color;
+				background: #262626;
 				width: 100%;
 				height: 100%;
 				border-radius: 100px;
@@ -402,8 +378,8 @@ body{
 					background-image: url(../img/common/ico_search.png);
 					background-size: contain;
 					background-repeat: no-repeat;
-					width: 15px;
-					height: 15px;
+					width: 16px;
+					height: 16px;
 					position: absolute;
 					top: 50%;
 					left: calc(50% + -24px);

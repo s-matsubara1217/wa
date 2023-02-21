@@ -20,82 +20,194 @@
   }
   // 求人検索
   .sec__jobSearch {
-    margin-top: 100px;
     .jobSearch {
       &__inner {
-
+        max-width: 1280px + 80px;
       }
       &__box {
-
+        background-color: $bg-color02;
+        border: 5px solid $txt-color;
+        border-radius: 40px;
+        padding: 72px 10%;
       }
 
       &__head {
-
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
       }
       &__body {
-
+        background-color: #fff;
+        margin-top: 36px;
+        padding: 56px 6.4%;
+        border-radius: 40px;
       }
     }
   }
   // 新着求人情報
   .sec__newJobs {
+    margin-top: 84px;
+
     .newJobs {
       &__inner {
-
+        max-width: 1180px;
       }
 
       &__head {
-
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
       }
       &__body {
-
+        margin-top: 40px;
       }
 
       &__swiper {
+        width: 370px;
+
         &-slide {
           a {
-            .imgArea {
-              .img {
-                img {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
 
+            .imgArea {
+              flex: 0 0 33%;
+              max-width: 120px;
+              margin-right: 5.4%;
+
+              .img {
+                @include keepAspect(100%);
+                img {
+                  border-radius: 20px;
                 }
               }
             }
             .txtArea {
               .info {
-                .status {
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-start;
 
+                .status {
+                  background-color: $txt-color;
+                  color: #fff;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 27px;
+                  height: 27px;
+                  margin-left: 2px;
+                  border-radius: 2px;
+                  font-size: 1.2rem;
+                  &:first-child {
+                    margin-right: 0;
+                  }
                 }
                 .occupation {
-
+                  margin-left: 4px;
+                  background-color: $secondary-color;
+                  border-radius: 2px;
+                  display: inline-block;
+                  padding: 0 8px;
+                  height: 27px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  line-height: 1.6;
+                  white-space: nowrap;
+                  font-size: 1.2rem;
                 }
               }
               .lead {
-
+                font-weight: bold;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 3;
+                text-decoration: underline;
+                margin-top: 8px;
               }
               .date {
+                font-weight: 400;
+                font-size: 1.3rem;
 
+                // アイコン カレンダー
+                &::before {
+                  content: '';
+                  display: inline-block;
+                  background-image: url(../../img/common/ico_calender.png);
+                  background-size: contain;
+                  background-repeat: no-repeat;
+                  width: 12px;
+                  height: 12px;
+                  margin-right: 5px;
+                }
               }
             }
           }
         }
         &-button {
+          display: flex;
+          justify-content: flex-start;
+          align-items: stretch;
+
           &-prev,
           &-next {
-
+            position: relative;
+            left: auto;
+            right: auto;
+            top: auto;
+            margin-top: 0;
+            background-image: url(../../img/common/swiper_button.png);
+            background-size: contain;
+            width: 76px;
+            height: 76px;
           }
           &-prev {
+            transform: scale(-1,1);
+          }
 
+          .swiper-button-disabled {
+            position: relative;
+            opacity: 1;
+            z-index: -1;
+
+            &::before {
+              content: '';
+              display: inline-block;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+              background-color: rgba(#000,0.2);
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 1;
+            }
           }
         }
+
       }
     }
   }
   // お仕事紹介
   .sec__jobs {
+    margin-top: 80px;
+    padding: 90px 0;
+    position: relative;
+    
+    // 背景 黄色
+
+
     .jobs {
       &__inner {
 
+      }
+      &__box {
+        background-color: $third-color;
+        border: 5px solid $txt-color;
+        border-left: none;
       }
 
       .imgArea {

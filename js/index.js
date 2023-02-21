@@ -2,7 +2,7 @@
   新着求人情報 swiper
 -------------------------------*/
 const newJobs__Swiper = new Swiper('.newJobs__swiper', {
-  spaceBetween: 28,
+  spaceBetween: 50,
   speed: 500,
   // autoplay: {
   //   delay: 5000,
