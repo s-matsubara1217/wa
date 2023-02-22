@@ -64,6 +64,7 @@ $breakpoints: (
 }
 
 // cubic-bezier
+$easing: ease;
 // 徐々に加速 - 徐々に減速 上から「小・中・大」
 $bezier-easeOutSine: cubic-bezier(0.61, 1, 0.88, 1);
 $bezier-easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);

@@ -162,30 +162,66 @@
 	commonHead
 --------------------*/
 .commonHead01{
+	@include mq(sp) {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: flex-start;
+	}
 	.eng {
 		font-family: $eng;
 		font-size: 4rem;
 		font-weight: bold;
-		line-height: 1;
+		line-height: 1.2;
 		position: relative;
 		z-index: 1;
 		@include mq(sp) {
-			font-size: 2.8rem;
+			font-size: 3rem;
 		}
 	}
 	.ja {
 		font-size: 1.6rem;
 		font-weight: bold;
 		line-height: 1.6;
+		margin-bottom: 4px;
+		@include mq(sp) {
+			font-size: 1.5rem;
+			margin-bottom: 0;
+		}
 	}
 
 	&.-row {
 		display: flex;
 		justify-content: flex-start;
 		align-items: flex-end;
+		@include mq(sp) {
+			align-items: flex-start;
+		}
 
 		.ja {
 			margin-left: 12px;
+			@include mq(sp) {
+				margin-left: 0;
+			}
+		}
+	}
+	&.-column {
+		.ja {
+			margin-top: 4px;
+		}
+	}
+	&.-white {
+		color: #fff;
+	}
+	&.-center {
+		text-align: center;
+	}
+	&.-small {
+		.eng {
+			font-size: 3rem;
+		}
+		.ja {
+			font-size: 1.5rem;
 		}
 	}
 }
@@ -227,9 +263,16 @@
 		display: inline-flex;
 		justify-content: flex-start;
 		align-items: center;
-		padding: 12px 38px;
+		padding: 11px 58px;
+		transition: transform 0.3s;
+		transition-timing-function: $easing;
+		@include mq(pc) {
+			&:hover {
+				transform: scale(1.08);
+			}
+		}
 		@include mq(sp) {
-			min-width: 200px;
+			// min-width: 200px;
 			padding: 9px 36px;
 			justify-content: center;
 		}
@@ -241,7 +284,6 @@
 		.txt {
 			font-size: 1.6rem;
 			color: #fff;
-			font-weight: bold;
 			@include mq(sp) {
         font-size: 1.5rem;
       }
@@ -259,8 +301,8 @@
 			width: 300px;
 			justify-content: center;
 			@include mq(sp) {
-				width: 210px;
-				padding: 16px;
+				width: 200px;
+				padding: 14px;
 			}
 		}
 	}
@@ -275,16 +317,54 @@
 		justify-content: flex-start;
 		align-items: center;
 		transition: opacity 0.3s;
+		@include mq(pc) {
+			&:hover {
+				.txt {
+					&:after {
+						animation: border-l-r 400ms $easing;
+						transform-origin: left top;
+					}
+				}
+				.icon {
+					animation: icon-l-r 400ms $easing;
+				}
+			}
+		}
 
 		.txt {
 			font-size: 1.6rem;
 			font-weight: bold;
-			border-bottom: 1px solid;
+			position: relative;
+
+			@include mq(sp) {
+				font-size: 1.5rem;
+			}
+
+			&:after {
+				content: '';
+				display: inline-block;
+				position: absolute;
+				left: 0;
+				width: 100%;
+				height: 1px;
+				background: $txt-color;
+				bottom: -1px;
+				// transform: scale(0, 1);
+				transform-origin: right top;
+				transition: transform 0.3s
+			}
 		}
 		.icon {
 			display: flex;
 			margin-left: 10px;
 			transition: transform 0.3s;
+
+			img {
+				@include mq(sp) {
+					transform: scale(0.8);
+					transform-origin: left center;
+				}
+			}
 		}
 	}
 }

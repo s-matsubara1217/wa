@@ -414,40 +414,32 @@
   }
 }
 
+// ページ固有アニメーション
+@keyframes border-l-r {
+  0% {
+    transform: scale(0, 1);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+@keyframes icon-l-r {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(8px);
+    opacity: 0;
+  }
+  50.5% {
+    transform: translateX(-8px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
 
 // FV アニメーション
-.mainVisual {
-  &__hero {
-    z-index: 2;
-    opacity: 0;
-    transition: opacity 1s;
-  }
-  &__copy {
-    opacity: 0;
-    transform: translate(24px, -50%);
-    transition: opacity 1s, transform 1s;
-    transition-delay: 0.6s;
-  }
-}
-.js-loaded {
-  .mainVisual {
-    &__hero {
-      opacity: 1;
-
-      .swiper-slide {
-        &[class*=-active] {
-          .img {
-            img {
-              transition-delay: 0s;
-              transform: scale(1);
-            }
-          }
-        }
-      }
-    }
-    &__copy {
-      opacity: 1;
-      transform: translate(0, -50%);
-    }
-  }
-}

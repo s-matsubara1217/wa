@@ -66,7 +66,8 @@
 
 				if (target.length) {
 					$('html,body').animate({
-						scrollTop: target.offset().top - $headerHeight - 20
+						// scrollTop: target.offset().top - $headerHeight - 20
+						scrollTop: target.offset().top - 24
 					}, 700);
 					return false;
 				}

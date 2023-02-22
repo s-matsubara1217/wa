@@ -356,6 +356,13 @@ body{
 			flex: 0 0 140px;
 			height: 48px;
 			margin-left: 10px;
+			transition: transform 0.3s;
+			transition-timing-function: $easing;
+			@include mq(pc) {
+				&:hover {
+					transform: scale(1.08);
+				}
+			}
 			@include mq(sp) {
 				max-width: 200px;
 				margin: 0 auto;

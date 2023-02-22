@@ -12,6 +12,7 @@
   padding-top: 100px;
   @include mq(sp) {
     padding-top: 72px;
+    border-top: 4px solid;
   }
 
   // 背景文字 RECRUIT
@@ -42,6 +43,9 @@
     position: absolute;
     bottom: 72px;
     left: 0;
+    @include mq(sp) {
+      height: 4px;
+    }
   }
 
   .recruit {
@@ -67,7 +71,7 @@
           justify-content: center;
           margin-left: auto;
           margin-right: auto;
-          margin-top: 24px;
+          margin-top: 16px;
           width: 90%;
         }
 
@@ -125,13 +129,14 @@
       @include mq(sp) {
         margin-top: -72px;
         padding: 28px 8% 32px;
+        border: 4px solid;
       }
 
       // 背景画像 ロゴ
       &::before {
         content: '';
         display: inline-block;
-        background-image: url(../../img/common/bg_logo.png);
+        background-image: url(../img/common/bg_logo.png);
         background-size: contain;
         background-repeat: no-repeat;
         width: 313px;

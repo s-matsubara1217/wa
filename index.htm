@@ -65,7 +65,7 @@
 						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="107">
 					</a>
 				</div>
-				<div class="hamburger__menu__nav">
+				<nav class="hamburger__menu__nav">
 					<ul class="hamburger__menu__nav__list">
 						<li class="hamburger__menu__nav__list__item">
 							<a href="index.htm">HOME</a>
@@ -73,20 +73,12 @@
 						<li class="hamburger__menu__nav__list__item">
 							<a href="kyujin_l.htm">求人情報</a>
 						</li>
-						<li class="hamburger__menu__nav__list__item">
-							<a href="jobs.htm">お仕事紹介</a>
-						</li>
-						<li class="hamburger__menu__nav__list__item">
-							<a href="interview_l.htm">スタッフインタビュー</a>
-						</li>
-						<li class="hamburger__menu__nav__list__item">
-							<a href="oneday.htm">一日の流れ</a>
-						</li>
-						<li class="hamburger__menu__nav__list__item">
-							<a href="data.htm">数字で見るJTPS</a>
-						</li>
+						<li class="hamburger__menu__nav__list__item"><a href="jobs.htm">仕事紹介</a></li>
+						<li class="hamburger__menu__nav__list__item"><a href="interview_l.htm">スタッフインタビュー</a></li>
+						<li class="hamburger__menu__nav__list__item"><a href="oneday.htm">お店の一日</a></li>
+						<li class="hamburger__menu__nav__list__item"><a href="comapany.htm">会社概要</a></li>
 					</ul>
-				</div>
+				</nav>
 				<div class="hamburger__menu__share">
 					<p class="hd eng">SHARE</p>
 					<ul class="list">
@@ -109,7 +101,7 @@
 		<header class="header">
 			<div class="header__inner">
 				<div class="header__logo">
-					<a href="index.htm">
+					<a href="index.htm" class="ro">
 						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="107">
 					</a>
 				</div>
@@ -139,7 +131,37 @@
 
 		<!-- メインビジュアル -->
 		<div class="mainVisual">
-			メインビジュアル
+			<div class="mainVisual__inner innerWrap">
+				<div class="mainVisual__txtHolder">
+					<div class="mainVisual_copy">
+						<h1 class="mainVisual__copy__ja">
+							株式会社和歌山イエローハット　採用サイト
+						</h1>
+						<div class="mainVisual__copy__eng">
+							<div class="img">
+								<img src="img/index/mv_copy.png" alt="YellowHat RECRUIT" height="168">
+							</div>
+						</div>
+						<div class="mainVisual__copy__lead">
+							<div class="img">
+								<img src="img/index/mv_copy_lead.png" alt="未経験歓迎、無資格OK！ イエローハットでゼロから車のプロになろう！" height="67">
+							</div>
+						</div>
+					</div>
+					<div class="circleBtn">
+						<a href="#JOBSEARCH">
+							<div class="circle">
+								<div class="bg"></div>
+								<span class="txt">まずは<br>求人検索</span>
+								<span class="icon"></span>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="mainVisual__imgHolder">
+
+				</div>
+			</div>
 		</div>
 
 		<!-- コンテンツ -->
@@ -149,7 +171,7 @@
 			<section class="sec__jobSearch">
 				<div class="jobSearch">
 					<div class="jobSearch__inner innerWrap">
-						<div class="jobSearch__box">
+						<div id="JOBSEARCH" class="jobSearch__box">
 							<div class="jobSearch__head">
 								<div class="commonHead01 -row">
 									<span class="eng">JOB SEARCH</span>
@@ -211,13 +233,13 @@
 													<li>
 														<input type="checkbox" id="occupation01" name="" />
 														<label for="occupation01">
-															レジ販売スタッフ
+															レジ・販売スタッフ
 														</label>
 													</li>
 													<li>
 														<input type="checkbox" id="occupation02" name="" />
 														<label for="occupation02">
-															ピットスタッフ
+															Pitスタッフ
 														</label>
 													</li>
 												</ul>
@@ -303,7 +325,7 @@
 											<div class="txtArea">
 												<div class="info">
 													<span class="status">正</span>
-													<span class="occupation">ピットスタッフ</span>
+													<span class="occupation">Pitスタッフ</span>
 												</div>
 												<p class="lead">
 													＼イエローハットのpitスタッフ／3級以上の整備士資格をお持ちの方！残業少な＼イエローハットのpitスタッフ／3級以上の整備士資格をお持ちの方！残業少な
@@ -323,7 +345,7 @@
 												<div class="info">
 													<span class="status">ア</span>
 													<span class="status">パ</span>
-													<span class="occupation">レジ販売スタッフ</span>
+													<span class="occupation">レジ・販売スタッフ</span>
 												</div>
 												<p class="lead">
 													＼イエローハットのpitスタッフ／3級以上の整備士資格をお持ちの方！残業少な＼イエローハットのpitスタッフ／3級以上の整備士資格をお持ちの方！残業少な
@@ -348,31 +370,42 @@
 					<div class="jobs__inner innerWrap">
 						<div class="jobs__box">
 							<div class="imgArea">
-								<div class="img img01">
-									<img src="img/index/jobs01.jpg" alt="イメージ" class="ofi" loading="lazy">
-									<span class="occupation">レジ販売スタッフ</span>
+								<div class="imgWrap imgWrap01">
+									<div class="img">
+										<img src="img/index/jobs01.jpg" alt="イメージ" class="ofi" loading="lazy">
+									</div>
+									<div class="occupation">
+										<img src="img/index/jobs_name01.png" alt="レジ・販売スタッフ" height="38">
+									</div>
 								</div>
-								<div class="img img02">
-									<img src="img/index/jobs02.jpg" alt="イメージ" class="ofi" loading="lazy">
-									<span class="occupation">レジ販売スタッフ</span>
+								<div class="imgWrap imgWrap02">
+									<div class="img">
+
+										<img src="img/index/jobs02.jpg" alt="イメージ" class="ofi" loading="lazy">
+									</div>
+									<div class="occupation">
+										<img src="img/index/jobs_name02.png" alt="Pit販売スタッフ" height="38">
+									</div>
 								</div>
 							</div>
 							<div class="txtArea">
-								<div class="commonHead01">
-									<span class="eng">JOB <br>INTRODUCTION</span>
-									<h2 class="ja">お仕事紹介</h2>
-								</div>
-								<p class="lead">
-									自分の成長が楽しい。<br>
-									そんな環境があります。
-								</p>
-								<p class="desc">
-									ダミー）大学生や主婦といったアルバイトの方も、転職されてきた正社員の方も、充実の研修で車の知識ゼロから始めて、活躍中の方が多数在籍しています。
-								</p>
-								<div class="commonBtn01">
-									<a href="jobs.htm">
-										<span class="txt">詳しく見る</span>
-									</a>
+								<div class="txtArea__wrap">
+									<div class="commonHead01 -column">
+										<span class="eng">JOB <br>INTRODUCTION</span>
+										<h2 class="ja">お仕事紹介</h2>
+									</div>
+									<p class="lead">
+										届けるのは、<br>
+										確かな安全と最高のサービス。
+									</p>
+									<p class="desc">
+										未経験スタートの先輩も多数活躍中！<br>快適なカーライフを支えるお仕事や<br>研修について詳しくご紹介します。<br>こちらのページから<br>働く姿や成長した自分も想像してみてください。
+									</p>
+									<div class="commonBtn01">
+										<a href="jobs.htm">
+											<span class="txt">詳しく見る</span>
+										</a>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -409,7 +442,7 @@
 														<img src="img/common/ico_tools.png" alt="アイコン" height="25">
 													</span>
 													<span class="txt">
-														ピット<br>
+														Pit<br>
 														スタッフ
 													</span>
 												</div>
@@ -437,7 +470,7 @@
 														<img src="img/common/ico_pos.png" alt="アイコン" height="25">
 													</span>
 													<span class="txt">
-														レジ販売<br>
+														レジ・販売<br>
 														スタッフ
 													</span>
 												</div>
@@ -446,7 +479,7 @@
 												</div>
 											</div>
 											<div class="nameArea">
-												<span class="status">正社員</span>
+												<span class="status">パート</span>
 												<span class="name">
 													<b>Yさん</b>（勤続年数7年）
 												</span>
@@ -465,7 +498,7 @@
 														<img src="img/common/ico_tools.png" alt="アイコン" height="25">
 													</span>
 													<span class="txt">
-														ピット<br>
+														Pit<br>
 														スタッフ
 													</span>
 												</div>
@@ -500,7 +533,7 @@
 						<section class="sec__oneday">
 							<div class="oneday">
 								<a href="oneday.htm">
-									<div class="imgAraa">
+									<div class="imgArea">
 										<div class="img">
 											<img src="img/index/oneday01.jpg" alt="イメージ" class="ofi" loading="lazy">
 										</div>
@@ -512,11 +545,14 @@
 										</div>
 									</div>
 									<div class="txtArea">
-										<div class="commonHead01">
+										<div class="commonHead01 -white">
 											<span class="eng">ONE DAY</span>
 											<h2 class="ja">お店の一日</h2>
 										</div>
 									</div>
+									<span class="icon">
+										<img src="img/common/ico_circlearrow_white.png" alt="アイコン" height="24">
+									</span>
 								</a>
 							</div>
 						</section>
@@ -527,10 +563,13 @@
 									<div class="logo">
 										<img src="img/common/logo.png" alt="ロゴ" height="69">
 									</div>
-									<div class="commonHead01 -center">
+									<div class="commonHead01 -center -small">
 										<span class="eng">COMPANY</span>
 										<h2 class="ja">会社概要</h2>
 									</div>
+									<span class="icon">
+										<img src="img/common/ico_circlearrow_brown.png" alt="アイコン" height="24">
+									</span>
 								</a>
 							</div>
 						</section>
@@ -539,6 +578,7 @@
 			</section>
 
 		</main>
+
 
 		<!-- リクルート（共通） -->
 		<section class="sec__recruit">
@@ -578,8 +618,8 @@
 							<li class="searchList__item">
 								<div class="head">職種から探す</div>
 								<ul class="list">
-									<li class="list__item"><a href="#">ピットスタッフ</a></li>
-									<li class="list__item"><a href="#">レジ販売スタッフ</a></li>
+									<li class="list__item"><a href="#">Pitスタッフ</a></li>
+									<li class="list__item"><a href="#">レジ・販売スタッフ</a></li>
 								</ul>
 							</li>
 							<li class="searchList__item">

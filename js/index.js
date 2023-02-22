@@ -26,8 +26,11 @@ const newJobs__Swiper = new Swiper('.newJobs__swiper', {
   インタビュー swiper
 -------------------------------*/
 const interview__Swiper = new Swiper('.interview__swiper', {
-  spaceBetween: 72,
+  // loop: true,
+  spaceBetween: 112,
   speed: 500,
+  slidesPerView: 1,
+  centeredSlides: true,
   // autoplay: {
   //   delay: 5000,
   //   disableOnInteraction: false,
@@ -35,7 +38,7 @@ const interview__Swiper = new Swiper('.interview__swiper', {
   // },
   breakpoints: {
     835: {
-      spaceBetween: 40,
+      spaceBetween: 56,
     }
   },
   pagination: {
@@ -68,15 +71,17 @@ $(window).on('scroll', function () {
 /** メディアクエリ **/
 var mediaQueryList01 = window.matchMedia("(max-width:834px)");
 var mediaQueryList02 = window.matchMedia("(min-width:835px)");
-const ListItems02 = document.querySelectorAll('.sec__common');
-const ListItemsArr02 = Array.prototype.slice.call(ListItems02);
+const ListItems01 = document.querySelectorAll('.sec__common');
+const ListItemsArr01 = Array.prototype.slice.call(ListItems01);
 
 /*** イベントリスナー ***/
 var listener01 = function(event) {
   // リサイズ時に行う処理
   if (event.matches) {
     // 835px未満
-    ListItemsArr02.forEach(function (ListItem) {
+    $('.jobs .lead').before($('.jobs .imgArea'))
+    $('.interview .interview__body').after($('.interview .commonBtn01'))
+    ListItemsArr01.forEach(function (ListItem) {
       const Target = ListItem.querySelector('.imgArea');
       const Destination = ListItem.querySelector('.commonHead01')
       const ParentNode = ListItem.querySelector('.txtArea');
@@ -89,7 +94,9 @@ var listener02 = function(event) {
   // リサイズ時に行う処理
   if (event.matches) {
     // 835px以上
-    ListItemsArr02.forEach(function (ListItem) {
+    $('.jobs .txtArea').before($('.jobs .imgArea'))
+    $('.interview .commonHead01').after($('.interview .commonBtn01'))
+    ListItemsArr01.forEach(function (ListItem) {
       const Target = ListItem.querySelector('.imgArea');
       const Destination = ListItem.querySelector('.commonHead01')
       const BenchMark = ListItem.querySelector('.txtArea');
