@@ -760,7 +760,7 @@
               &:hover {
                 .img {
                   img {
-                    transform: scale(1.08);
+                    transform: scale(1.05);
                   }
                 }
              }
@@ -1055,6 +1055,12 @@
           background-color: #362e2b;
           padding: 48px 8%;
           border-radius: 300px;
+          transition: transform 0.3s;
+          @include mq(pc) {
+            &:hover {
+              transform: scale(1.03);
+            }
+          }
           @include mq(sp) {
             display: block;
             padding: 24px 8%;
@@ -1136,8 +1142,6 @@
     // 会社概要
     .sec__company {
       flex: 0 0 27%;
-      background-color: #fefce0;
-      border-radius: 300px;
       display: flex;
       justify-content: center;
       align-content: center;
@@ -1157,6 +1161,14 @@
           align-items: center;
           flex-direction: column;
           position: relative;
+          border-radius: 300px;
+          background-color: #fefce0;
+          transition: transform 0.3s;
+          @include mq(pc) {
+            &:hover {
+              transform: scale(1.05);
+            }
+          }
           @include mq(sp) {
             padding: 16px;
           }

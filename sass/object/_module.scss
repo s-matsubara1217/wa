@@ -268,7 +268,7 @@
 		transition-timing-function: $easing;
 		@include mq(pc) {
 			&:hover {
-				transform: scale(1.08);
+				transform: scale(1.05);
 			}
 		}
 		@include mq(sp) {
