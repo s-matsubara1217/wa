@@ -1,4 +1,21 @@
 /*-------------------------------
+  メインビジュアル swiper
+-------------------------------*/
+const mv_swiper = new Swiper('.mv_swiper', {
+  loop: true,
+  speed: 750,
+  effect: 'fade',
+  // parallax: true,
+  // allowTouchMove: false,
+  // autoplay: {
+  // 	delay: 5000,
+  // 	stopOnLastSlide: false,
+  // 	disableOnInteraction: false,
+  // 	reverseDirection: false
+  // },
+});
+
+/*-------------------------------
   新着求人情報 swiper
 -------------------------------*/
 const newJobs__Swiper = new Swiper('.newJobs__swiper', {
