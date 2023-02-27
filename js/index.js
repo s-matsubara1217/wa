@@ -1,7 +1,7 @@
 /*-------------------------------
-	gsap
+	メインビジュアル アニメーション gsap
 -------------------------------*/
-var helloAnim = function () {
+var heroAnim = function () {
 
   const jsHeroCopy = '.js-mainVisual__copy'
   const jsHeroCirleBtn = '.js-circleBtn'
@@ -91,8 +91,7 @@ var helloAnim = function () {
   });
 
 }
-helloAnim();
-
+heroAnim();
 
 
 /*-------------------------------
@@ -116,7 +115,6 @@ const mv_swiper = new Swiper('.mv_swiper', {
 });
 
 
-
 /*-------------------------------
   新着求人情報 swiper
 -------------------------------*/
@@ -138,6 +136,19 @@ const newJobs__Swiper = new Swiper('.newJobs__swiper', {
     nextEl: '.newJobs__swiper-button-next',
     prevEl: '.newJobs__swiper-button-prev',
   },
+});
+//画面に現れるまでswiperを停止
+newJobs__Swiper.autoplay.stop();
+$(window).on('scroll', function () {
+  let position = $('.newJobs__swiper').offset().top - $(window).innerHeight() + 100,
+  scrollTop = $(window).scrollTop();
+  if (scrollTop > position) {
+    //画面に現れたらswiperを開始
+    newJobs__Swiper.autoplay.start();
+  } else {
+    // 画面外にスクロールしたらswiperを停止
+    newJobs__Swiper.autoplay.stop();
+  }
 });
 
 
@@ -182,6 +193,7 @@ $(window).on('scroll', function () {
     interview__Swiper.autoplay.stop();
   }
 });
+
 
 /*-------------------------------
   SPのみ順番入れ替え

@@ -27,6 +27,7 @@
       width: 100%;
       height: calc(100% + 200px);
       opacity: 0.12;
+      pointer-events: none;
     }
 
     &__inner {
@@ -422,6 +423,7 @@
           bottom: -72px;
           left: -1.6%;
           z-index: 3;
+          pointer-events: none;
           @include mq(tab) {
             transform: scale(0.8);
             transform-origin: bottom left;
@@ -459,6 +461,7 @@
           bottom: 0;
           right: -7.2%;
           bottom: -32px;
+          pointer-events: none;
           @include mq(tab) {
             transform: scale(0.8);
             transform-origin: bottom right;
@@ -776,6 +779,7 @@
           padding-right: 20px;
         }
 
+        // 背景イラスト 工具
         &::before {
           content: '';
           background-image: url(../../img/common/bg_tool.png);
@@ -786,6 +790,7 @@
           position: absolute;
           bottom: -200px;
           right: 24px;
+          pointer-events: none;
         }
       }
 
@@ -1288,6 +1293,7 @@
             left: 0;
             opacity: 0.2;
             border-radius: 300px;
+            pointer-events: none;
           }
         }
         .imgArea {
