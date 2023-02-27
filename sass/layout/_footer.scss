@@ -76,6 +76,7 @@
           margin-left: auto;
           margin-right: auto;
           margin-top: 16px;
+          padding-left: 20px;
           width: 90%;
         }
 
@@ -129,9 +130,9 @@
       position: relative;
       overflow: hidden;
       z-index: 3;
-      margin-top: -96px;
+      margin-top: -212px;
       @include mq(sp) {
-        margin-top: -72px;
+        margin-top: -112px;
         padding: 28px 8% 32px;
         border: 4px solid;
       }
