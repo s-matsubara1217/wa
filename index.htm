@@ -487,119 +487,7 @@
 					</div>
 				</div>
 			</section>
-			<!-- スタッフインタビュー -->
-			<section class="sec__interview">
-				<div class="interview">
-					<div class="interview__inner innerWrap">
-						<div class="interview__head">
-							<div class="commonHead01 -row">
-								<span class="eng split anime -for-scaleIn-rb">INTERVIEW</span>
-								<h2 class="ja anime -slideIn-r-40 -delay">スタッフインタビュー</h2>
-							</div>
-							<div class="commonBtn01">
-								<a href="interview_l.htm">
-									<span class="txt">一覧を見る</span>
-								</a>
-							</div>
-						</div>
-						<div class="interview__body anime -slideIn-b">
-							<div class="swiper interview__swiper">
-								<div class="swiper-wrapper">
-									<div class="swiper-slide interview__swiper-slide">
-										<a href="interivew_l.htm">
-											<p class="lead">
-												ゼロからのスタート。<br>
-												だからこそ常に前向きに！
-											</p>
-											<div class="imgArea">
-												<div class="budge">
-													<span class="icon">
-														<img src="img/common/ico_tools.png" alt="アイコン" height="25">
-													</span>
-													<span class="txt">
-														Pit<br>
-														スタッフ
-													</span>
-												</div>
-												<div class="img">
-													<img src="img/index/interview01.jpg" alt="イメージ" class="ofi" loading="lazy">
-												</div>
-											</div>
-											<div class="nameArea">
-												<span class="status">正社員</span>
-												<span class="name">
-													<b>Yさん</b>（勤続年数7年）
-												</span>
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide interview__swiper-slide">
-										<a href="interview_l.htm">
-											<p class="lead">
-												ゼロからのスタート。<br>
-												だからこそ常に前向きに！
-											</p>
-											<div class="imgArea">
-												<div class="budge">
-													<span class="icon">
-														<img src="img/common/ico_pos.png" alt="アイコン" height="25">
-													</span>
-													<span class="txt">
-														レジ・販売<br>
-														スタッフ
-													</span>
-												</div>
-												<div class="img">
-													<img src="img/index/interview02.jpg" alt="イメージ" class="ofi" loading="lazy">
-												</div>
-											</div>
-											<div class="nameArea">
-												<span class="status">パート</span>
-												<span class="name">
-													<b>Yさん</b>（勤続年数7年）
-												</span>
-											</div>
-										</a>
-									</div>
-									<div class="swiper-slide interview__swiper-slide">
-										<a href="interview_l.htm">
-											<p class="lead">
-												ゼロからのスタート。<br>
-												だからこそ常に前向きに！
-											</p>
-											<div class="imgArea">
-												<div class="budge">
-													<span class="icon">
-														<img src="img/common/ico_tools.png" alt="アイコン" height="25">
-													</span>
-													<span class="txt">
-														Pit<br>
-														スタッフ
-													</span>
-												</div>
-												<div class="img">
-													<img src="img/index/interview03.jpg" alt="イメージ" class="ofi" loading="lazy">
-												</div>
-											</div>
-											<div class="nameArea">
-												<span class="status">正社員</span>
-												<span class="name">
-													<b>Yさん</b>（勤続年数7年）
-												</span>
-											</div>
-										</a>
-									</div>
-								</div>
-								<div class="swiper-pagination interview__swiper-pagination"></div>
-								<div class="swiper-button interview__swiper-button">
-									<div class="swiper-button-prev interview__swiper-button-prev"></div>
-									<div class="swiper-button-next interview__swiper-button-next"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
+			<!-- スタッフインタビュー Ajax -->
 			<!-- その他 -->
 			<section class="sec__others">
 				<div class="others">
@@ -778,8 +666,8 @@
 	<script src="js/vendor/swiper.min.js"></script>
 	<script src="js/index.js"></script>
 
-	<!-- スタッフインタビュー Ajax -->
-	<!-- <script>
+	<!-- インタビュー Ajax -->
+	<script>
     jQuery(function () {
       jQuery.ajax({
         type: 'GET',
@@ -798,58 +686,66 @@
 						インタビュー swiper
 					-------------------------------*/
 					const interview__Swiper = new Swiper('.interview__swiper', {
-						spaceBetween: 72,
+						// loop: true,
+						spaceBetween: 112,
 						speed: 500,
+						slidesPerView: 1,
+						centeredSlides: true,
 						autoplay: {
-						  delay: 5000,
-						  disableOnInteraction: false,
-						  waitForTransition: false,
+							delay: 5000,
+							disableOnInteraction: false,
+							waitForTransition: false,
 						},
 						breakpoints: {
 							835: {
-								spaceBetween: 40,
+								spaceBetween: 56,
 							}
+						},
+						pagination: {
+							el: ".interview__swiper-pagination",
+							clickable: true,
 						},
 						navigation: {
 							nextEl: '.interview__swiper-button-next',
 							prevEl: '.interview__swiper-button-prev',
 						},
 					});
-					interview__Swiper.autoplay.stop(); //画面に現れるまでswiperを停止
+					//画面に現れるまでswiperを停止
+					interview__Swiper.autoplay.stop();
 					$(window).on('scroll', function () {
 						let position = $('.interview__swiper').offset().top - $(window).innerHeight() + 100,
 						scrollTop = $(window).scrollTop();
-						if(scrollTop > position) {
-							interview__Swiper.autoplay.start(); //画面に現れたらswiperを開始
-						} else{
-							interview__Swiper.autoplay.stop(); // 画面外にスクロールしたらswiperを停止
+						if (scrollTop > position) {
+							//画面に現れたらswiperを開始
+							interview__Swiper.autoplay.start();
+						} else {
+							// 画面外にスクロールしたらswiperを停止
+							interview__Swiper.autoplay.stop();
 						}
 					});
 
 					/*-------------------------------
-						SPのみボタン順番入れ替え
+						SPのみ順番入れ替え
 					-------------------------------*/
 					/*** 変数定義 ***/
 					/** メディアクエリ **/
 					var mediaQueryList01 = window.matchMedia("(max-width:834px)");
 					var mediaQueryList02 = window.matchMedia("(min-width:835px)");
-
 					/*** イベントリスナー ***/
 					var listener01 = function(event) {
 						// リサイズ時に行う処理
 						if (event.matches) {
 							// 835px未満
-							$('.interview__body').after($('.interview .commonBtn01'));
+							$('.interview .interview__body').after($('.interview .commonBtn01'))
 						}
 					};
 					var listener02 = function(event) {
 						// リサイズ時に行う処理
 						if (event.matches) {
 							// 835px以上
-							$('.interview__head .wrap').after($('.interview .commonBtn01'));
+							$('.interview .commonHead01').after($('.interview .commonBtn01'))
 						}
 					};
-
 					/*** リスナー登録 ***/
 					if (mediaQueryList01.addEventListener) {
 						mediaQueryList01.addEventListener("change", listener01, false);
@@ -861,7 +757,6 @@
 					} else if (mediaQueryList02.attachEvent) {
 						mediaQueryList02.attachEvent("change", listener02);
 					}
-
 					/*** 初期化処理 ***/
 					listener01(mediaQueryList01);
 					listener02(mediaQueryList02);
@@ -869,7 +764,7 @@
         },
       });
     });
-  </script> -->
+  </script>
 
 </body>
 </html>

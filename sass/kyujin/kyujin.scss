@@ -10,9 +10,9 @@
 // mixins
 //========================================
 //color set
-$primary-color: #00ae68;
-$accent-color: #00ae68;
-$txt-color: #003d25;
+$primary-color: #f6c10d;
+$accent-color: #4a362e;
+$txt-color: #4a362e;
 
 // Breakpoint
 // min-width
@@ -73,7 +73,7 @@ $breakpoint-down: (
 }
 
 .kyujin_container {
-    max-width: 1180px;
+    max-width: 1280px;
     margin: 0 auto;
     padding-left: 40px;
     padding-right: 40px;
@@ -418,7 +418,7 @@ parts
             font-weight: bold;
             width: 28px;
             height: 28px;
-            line-height: 28px;
+            line-height: 24px;
             background: #dedede;
             overflow: hidden;
             &:before {
