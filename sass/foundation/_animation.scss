@@ -57,14 +57,14 @@
     opacity: 0;
     &.js-active {
       @include animation(
-        fadein-r-40 500ms $bezier-easeOutSine 100ms
+        fadein-r-40 500ms $easing 100ms
       );
     }
 
     &.-delay {
       &.js-active {
         @include animation(
-          fadein-r-40 500ms $bezier-easeOutSine 250ms
+          fadein-r-40 500ms $easing 450ms
         );
       }
     }
@@ -167,6 +167,30 @@
                 (($i * 50ms) + 400ms)
             );
           }
+        }
+      }
+    }
+  }
+  // ページ固有アニメーション
+  &.-slideIn-b {
+    opacity: 0;
+    &.js-active {
+      @include animation(
+        fadein-b 600ms $easing 100ms
+      );
+    }
+  }
+  &.-for-scaleIn-rb {
+    span {
+      display: inline-block;
+      opacity: 0;
+    }
+    &.js-active {
+      @for $i from 1 through 30 {
+        span:nth-child(#{$i}) {
+          @include animation(
+            fadein-rb-scale 600ms $easing ($i * 35ms)
+          );
         }
       }
     }
@@ -333,6 +357,45 @@
     transform: translateX(0) rotateY(0);
   }
 }
+// ページ固有アニメーション
+@include keyframes(fadein-b) {
+  0% {
+    opacity: 0;
+    transform: translate(0, 20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+@include keyframes(fadein-rb-scale) {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translate(10px, 10px);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translate(0);
+  }
+}
+@include keyframes(fadein-scale) {
+  0% {
+    opacity: 0;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
 
 // SCALE ANIMATION
 @include keyframes(scale-0-1) {
@@ -413,7 +476,6 @@
     transform: scaleY(0);
   }
 }
-
 // ページ固有アニメーション
 @keyframes border-l-r {
   0% {

@@ -133,7 +133,7 @@
 		<div class="mainVisual">
 			<div class="mainVisual__inner innerWrap">
 				<div class="mainVisual__txtHolder">
-					<div class="mainVisual_copy">
+					<div class="mainVisual__copy js-mainVisual__copy">
 						<h1 class="mainVisual__copy__ja">
 							株式会社和歌山イエローハット　採用サイト
 						</h1>
@@ -148,7 +148,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="circleBtn">
+					<div class="circleBtn js-circleBtn">
 						<a href="#JOBSEARCH">
 							<div class="circle">
 								<div class="bg"></div>
@@ -160,16 +160,16 @@
 				</div>
 				<div class="mainVisual__imgHolder">
 					<!-- スライダー4枚 -->
-					<div class="mainVisual__sliderList">
-						<div class="mainVisual__sliderList__item -slide01">
+					<div class="mainVisual__sliderList js-mainVisual__sliderList">
+						<div id="js-item01" class="mainVisual__sliderList__item -slide01">
 							<div class="mv_swiper swiper-container">
 								<div class="mv_swiper_list swiper-wrapper">
-									<div class="mv_swiper_item swiper-slide">
+									<div data-swiper-autoplay="7000" class="mv_swiper_item swiper-slide">
 										<div class="img">
 											<img src="img/index/mv_hero01_01.jpg" alt="イメージ" class="ofi">
 										</div>
 									</div>
-									<div class="mv_swiper_item swiper-slide">
+									<div data-swiper-autoplay="7000" class="mv_swiper_item swiper-slide">
 										<div class="img">
 											<img src="img/index/mv_hero01_02.jpg" alt="イメージ" class="ofi">
 										</div>
@@ -177,15 +177,15 @@
 								</div>
 							</div>
 						</div>
-						<div class="mainVisual__sliderList__item -slide02">
+						<div id="js-item02" class="mainVisual__sliderList__item -slide02">
 							<div class="mv_swiper swiper-container">
 								<div class="mv_swiper_list swiper-wrapper">
-									<div class="mv_swiper_item swiper-slide">
+									<div data-swiper-autoplay="10000" class="mv_swiper_item swiper-slide">
 										<div class="img">
 											<img src="img/index/mv_hero02_01.jpg" alt="イメージ" class="ofi">
 										</div>
 									</div>
-									<div class="mv_swiper_item swiper-slide">
+									<div data-swiper-autoplay="10000" class="mv_swiper_item swiper-slide">
 										<div class="img">
 											<img src="img/index/mv_hero02_02.jpg" alt="イメージ" class="ofi">
 										</div>
@@ -193,15 +193,15 @@
 								</div>
 							</div>
 						</div>
-						<div class="mainVisual__sliderList__item -slide03">
+						<div id="js-item03" class="mainVisual__sliderList__item -slide03">
 							<div class="mv_swiper swiper-container">
 								<div class="mv_swiper_list swiper-wrapper">
-									<div class="mv_swiper_item swiper-slide">
+									<div data-swiper-autoplay="4500" class="mv_swiper_item swiper-slide">
 										<div class="img">
 											<img src="img/index/mv_hero03_01.jpg" alt="イメージ" class="ofi">
 										</div>
 									</div>
-									<div class="mv_swiper_item swiper-slide">
+									<div data-swiper-autoplay="4500" class="mv_swiper_item swiper-slide">
 										<div class="img">
 											<img src="img/index/mv_hero03_02.jpg" alt="イメージ" class="ofi">
 										</div>
@@ -209,15 +209,15 @@
 								</div>
 							</div>
 						</div>
-						<div class="mainVisual__sliderList__item -slide04">
+						<div id="js-item04" class="mainVisual__sliderList__item -slide04">
 							<div class="mv_swiper swiper-container">
 								<div class="mv_swiper_list swiper-wrapper">
-									<div class="mv_swiper_item swiper-slide">
+									<div data-swiper-autoplay="8200" class="mv_swiper_item swiper-slide">
 										<div class="img">
 											<img src="img/index/mv_hero04_01.jpg" alt="イメージ" class="ofi">
 										</div>
 									</div>
-									<div class="mv_swiper_item swiper-slide">
+									<div data-swiper-autoplay="8200" class="mv_swiper_item swiper-slide">
 										<div class="img">
 											<img src="img/index/mv_hero04_02.jpg" alt="イメージ" class="ofi">
 										</div>
@@ -228,10 +228,10 @@
 					</div>
 					<!-- 人物画像2枚 -->
 					<div class="mainVisual__human">
-						<div class="img img_human01">
+						<div class="img img_human01 js-human">
 							<img src="img/index/mv_human01.png" alt="人物イメージ">
 						</div>
-						<div class="img img_human02">
+						<div class="img img_human02 js-human">
 							<img src="img/index/mv_human02.png" alt="人物イメージ">
 						</div>
 					</div>
@@ -249,8 +249,8 @@
 						<div id="JOBSEARCH" class="jobSearch__box">
 							<div class="jobSearch__head">
 								<div class="commonHead01 -row">
-									<span class="eng">JOB SEARCH</span>
-									<h2 class="ja">求人を探す</h2>
+									<span class="eng split anime -for-scaleIn-rb">JOB SEARCH</span>
+									<h2 class="ja anime -slideIn-r-40 -delay">求人を探す</h2>
 								</div>
 								<div class="commonLink01">
 									<a href="kyjin_l.htm">
@@ -375,8 +375,8 @@
 					<div class="newJobs__inner innerWrap">
 						<div class="newJobs__head">
 							<div class="commonHead01 -row">
-								<span class="eng">NEW JOBS</span>
-								<h2 class="ja">新着求人情報</h2>
+								<span class="eng split anime -for-scaleIn-rb">NEW JOBS</span>
+								<h2 class="ja anime -slideIn-r-40 -delay">新着求人情報</h2>
 							</div>
 							<div class="commonLink01">
 								<a href="whatsnew_a_type.htm">
@@ -390,7 +390,7 @@
 						<div class="newJobs__body">
 							<div class="swiper newJobs__swiper">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide newJobs__swiper-slide">
+									<div class="swiper-slide newJobs__swiper-slide anime -slideIn-b">
 										<a href="whatsnew_a_type.htm">
 											<div class="imgArea">
 												<div class="img">
@@ -409,7 +409,7 @@
 											</div>
 										</a>
 									</div>
-									<div class="swiper-slide newJobs__swiper-slide">
+									<div class="swiper-slide newJobs__swiper-slide anime -slideIn-b">
 										<a href="whatsnew_a_type.htm">
 											<div class="imgArea">
 												<div class="img">
@@ -445,7 +445,7 @@
 					<div class="jobs__inner innerWrap">
 						<div class="jobs__box">
 							<div class="imgArea">
-								<div class="imgWrap imgWrap01">
+								<div class="imgWrap imgWrap01 anime -slideIn-b">
 									<div class="img">
 										<img src="img/index/jobs01.jpg" alt="イメージ" class="ofi" loading="lazy">
 									</div>
@@ -453,7 +453,7 @@
 										<img src="img/index/jobs_name01.png" alt="レジ・販売スタッフ" height="38">
 									</div>
 								</div>
-								<div class="imgWrap imgWrap02">
+								<div class="imgWrap imgWrap02 anime -slideIn-b">
 									<div class="img">
 
 										<img src="img/index/jobs02.jpg" alt="イメージ" class="ofi" loading="lazy">
@@ -466,8 +466,8 @@
 							<div class="txtArea">
 								<div class="txtArea__wrap">
 									<div class="commonHead01 -column">
-										<span class="eng">JOB <br>INTRODUCTION</span>
-										<h2 class="ja">お仕事紹介</h2>
+										<span class="eng split anime -for-scaleIn-rb">JOB <br>INTRODUCTION</span>
+										<h2 class="ja anime -slideIn-r-40 -delay">お仕事紹介</h2>
 									</div>
 									<p class="lead">
 										届けるのは、<br>
@@ -493,8 +493,8 @@
 					<div class="interview__inner innerWrap">
 						<div class="interview__head">
 							<div class="commonHead01 -row">
-								<span class="eng">INTERVIEW</span>
-								<h2 class="ja">スタッフインタビュー</h2>
+								<span class="eng split anime -for-scaleIn-rb">INTERVIEW</span>
+								<h2 class="ja anime -slideIn-r-40 -delay">スタッフインタビュー</h2>
 							</div>
 							<div class="commonBtn01">
 								<a href="interview_l.htm">
@@ -502,7 +502,7 @@
 								</a>
 							</div>
 						</div>
-						<div class="interview__body">
+						<div class="interview__body anime -slideIn-b">
 							<div class="swiper interview__swiper">
 								<div class="swiper-wrapper">
 									<div class="swiper-slide interview__swiper-slide">
@@ -605,7 +605,7 @@
 				<div class="others">
 					<div class="others__inner innerWrap">
 						<!-- お店の一日 -->
-						<section class="sec__oneday">
+						<section class="sec__oneday anime -slideIn-b">
 							<div class="oneday">
 								<a href="oneday.htm">
 									<div class="imgArea">
@@ -621,8 +621,8 @@
 									</div>
 									<div class="txtArea">
 										<div class="commonHead01 -white">
-											<span class="eng">ONE DAY</span>
-											<h2 class="ja">お店の一日</h2>
+											<span class="eng split anime -for-scaleIn-rb">ONE DAY</span>
+											<h2 class="ja anime -slideIn-r-40 -delay">お店の一日</h2>
 										</div>
 									</div>
 									<span class="icon">
@@ -632,15 +632,15 @@
 							</div>
 						</section>
 						<!-- 会社概要 -->
-						<section class="sec__company">
+						<section class="sec__company anime -slideIn-b">
 							<div class="company">
 								<a href="company.htm">
 									<div class="logo">
 										<img src="img/common/logo.png" alt="ロゴ" height="69">
 									</div>
 									<div class="commonHead01 -center -small">
-										<span class="eng">COMPANY</span>
-										<h2 class="ja">会社概要</h2>
+										<span class="eng split anime -for-scaleIn-rb">COMPANY</span>
+										<h2 class="ja anime -slideIn-r-40 -delay">会社概要</h2>
 									</div>
 									<span class="icon">
 										<img src="img/common/ico_circlearrow_brown.png" alt="アイコン" height="24">
@@ -654,13 +654,13 @@
 
 		</main>
 
-
 		<!-- リクルート（共通） -->
 		<section class="sec__recruit">
+			<span class="bg-txt split anime -for-scaleIn-rb">RECRUIT</span>
 			<div class="recruit">
 				<div class="recruit__inner innerWrap">
 					<div class="recruit__body">
-						<div class="imgArea">
+						<div class="imgArea anime -slideIn-b">
 							<div class="img">
 								<img src="img/common/recruit_human.png" alt="人物イメージ" class="ofi" loading="lazy">
 							</div>
@@ -774,6 +774,7 @@
 	<script src="js/vendor/ofi.min.js"></script>
 	<script src="js/script.js"></script>
 	<!-- [!] 固有スクリプト -->
+	<script src="js/vendor/gsap.min.js"></script>
 	<script src="js/vendor/swiper.min.js"></script>
 	<script src="js/index.js"></script>
 

@@ -1,19 +1,121 @@
 /*-------------------------------
+	gsap
+-------------------------------*/
+var helloAnim = function () {
+
+  const jsHeroCopy = '.js-mainVisual__copy'
+  const jsHeroCirleBtn = '.js-circleBtn'
+  const jsHeroCircleImg = '.js-mainVisual__sliderList [id*=js-item]'
+  const jsHeroHuman = '.js-human'
+
+  //アニメーション前の初期状態をセット
+  gsap.set(
+    jsHeroCopy, {
+      opacity: 0,
+      // y: 40,
+      scale: 0.8,
+    }
+  );
+  gsap.set(
+    jsHeroCirleBtn, {
+      opacity: 0,
+      y: -32,
+    }
+  );
+  gsap.set(
+    jsHeroCircleImg, {
+      opacity: 0,
+      y: 40,
+    }
+  );
+  gsap.set(
+    jsHeroHuman, {
+      opacity: 0,
+      y: 40,
+    }
+  );
+  // timelineを作成
+  // const tl01 = gsap.timeline();
+  const tl02 = gsap.timeline();
+
+
+  $(window).on('load', function () {
+    // タイムライン上で各アニメーションを連動
+    // tl01.to(
+    //   jsHeroCopy, {
+    //     opacity: 1,
+    //     // y: 0,
+    //     scale: 1,
+    //     duration: 0.6,
+    //     ease: 'back'
+    //   }
+    // )
+    tl02.to(
+      jsHeroCircleImg, {
+        opacity: 1,
+        y: 0,
+        delay: 0.2,
+        duration: 0.6,
+        ease: 'back',
+        stagger: {
+          amount: 0.25,
+        }
+      },
+    ).to(
+      jsHeroCopy, {
+        opacity: 1,
+        // y: 0,
+        scale: 1,
+        duration: 0.7,
+        ease: 'back'
+      },
+      "-=0.25"
+    ).to(
+      jsHeroHuman, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'back',
+      },
+      "-=0.6"
+    ).to(
+      jsHeroCirleBtn, {
+        opacity: 1,
+        y: 0,
+        delay: -0.2,
+        duration: 0.6,
+        ease: 'power2',
+      },
+      "+=0.3"
+    )
+  });
+
+}
+helloAnim();
+
+
+
+/*-------------------------------
   メインビジュアル swiper
 -------------------------------*/
 const mv_swiper = new Swiper('.mv_swiper', {
   loop: true,
   speed: 750,
   effect: 'fade',
-  // parallax: true,
+  fadeEffect: {
+    crossFade: true,
+  },
+  parallax: true,
   // allowTouchMove: false,
-  // autoplay: {
-  // 	delay: 5000,
-  // 	stopOnLastSlide: false,
-  // 	disableOnInteraction: false,
-  // 	reverseDirection: false
-  // },
+  autoplay: {
+  	delay: 10000,
+  	stopOnLastSlide: false,
+  	disableOnInteraction: false,
+  	reverseDirection: false
+  },
 });
+
+
 
 /*-------------------------------
   新着求人情報 swiper
@@ -21,11 +123,11 @@ const mv_swiper = new Swiper('.mv_swiper', {
 const newJobs__Swiper = new Swiper('.newJobs__swiper', {
   spaceBetween: 50,
   speed: 500,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  //   waitForTransition: false,
-  // },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    waitForTransition: false,
+  },
   breakpoints: {
     835: {
       spaceBetween: 24,
@@ -48,11 +150,11 @@ const interview__Swiper = new Swiper('.interview__swiper', {
   speed: 500,
   slidesPerView: 1,
   centeredSlides: true,
-  // autoplay: {
-  //   delay: 5000,
-  //   disableOnInteraction: false,
-  //   waitForTransition: false,
-  // },
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+    waitForTransition: false,
+  },
   breakpoints: {
     835: {
       spaceBetween: 56,
@@ -68,16 +170,16 @@ const interview__Swiper = new Swiper('.interview__swiper', {
   },
 });
 //画面に現れるまでswiperを停止
-// interview__Swiper.autoplay.stop();
+interview__Swiper.autoplay.stop();
 $(window).on('scroll', function () {
   let position = $('.interview__swiper').offset().top - $(window).innerHeight() + 100,
   scrollTop = $(window).scrollTop();
   if (scrollTop > position) {
     //画面に現れたらswiperを開始
-    // interview__Swiper.autoplay.start();
+    interview__Swiper.autoplay.start();
   } else {
     // 画面外にスクロールしたらswiperを停止
-    // interview__Swiper.autoplay.stop();
+    interview__Swiper.autoplay.stop();
   }
 });
 

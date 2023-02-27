@@ -38,7 +38,7 @@
       }
       @include mq(sp) {
         padding-top: 32px;
-        padding-bottom: 56px;
+        padding-bottom: 40px;
       }
     }
 
@@ -51,10 +51,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      // pointer-events: none;
+      pointer-events: none;
     }
 
     &__copy {
+      opacity: 0;
       &__ja {
         font-size: 1.6rem;
         font-weight: bold;
@@ -67,7 +68,7 @@
           padding: 4px 16px;
         }
         @include mq(sp) {
-          font-size: 1.3rem;
+          font-size: 1rem;
           padding: 2px 14px;
         }
       }
@@ -82,7 +83,7 @@
             height: 156px;
           }
           @include mq(sp) {
-            height: 111px;
+            height: 98px;
           }
         }
       }
@@ -96,38 +97,97 @@
             height: 57px;
           }
           @include mq(sp) {
-            height: 43px;
+            height: 36px;
           }
         }
       }
     }
     &__sliderList {
       &__item {
+        opacity: 0;
         position: absolute;
+        border-radius: 50%;
         z-index: -1;
-        img {
+        .img {
           border-radius: 50%;
+          overflow: hidden;
+          img {
+            border-radius: 50%;
+            transition: 7s 1s ease-out;
+            transform: scale(1.1);
+          }
         }
 
         &.-slide01 {
           width: 200px;
           top: 110px;
           left: -7%;
+          @include mq(tab) {
+            width: 200px * 0.8;
+            top: 180px;
+            left: 4%;
+          }
+          @include mq(sp) {
+            width: 200px * 0.4;
+            top: 132px;
+            left: 4%;
+          }
         }
         &.-slide02 {
           width: 240px;
           top: -40px;
           left: 18%;
+          @include mq(tab) {
+            width: 240px * 0.8;
+            top: 1px;
+            left: 18%;
+          }
+          @include mq(sp) {
+            width: 240px * 0.4;
+            top: 8px;
+            left: -1%;
+          }
         }
         &.-slide03 {
           width: 160px;
           top: 48px;
           right: 12%;
+          @include mq(tab) {
+            width: 160px * 0.8;
+            top: 24px;
+            right: 14%;
+          }
+          @include mq(sp) {
+            width: 160px * 0.4;
+            top: 16px;
+            right: 2%;
+          }
         }
         &.-slide04 {
           width: 240px;
           top: 150px;
           right: -14%;
+          @include mq(tab) {
+            width: 240px * 0.8;
+            top: 140px;
+            right: -3%;
+          }
+          @include mq(sp) {
+            width: 240px * 0.4;
+            top: 116px;
+            right: -5%;
+          }
+        }
+
+        .swiper-slide {
+          &[class*=-active] {
+            .img {
+              img {
+                transition-delay: 0s;
+                transform: scale(1);
+              }
+            }
+          }
         }
       }
     }
@@ -136,8 +196,12 @@
         position: absolute;
         bottom: 0;
         z-index: -1;
+        opacity: 0;
         @include mq(tab) {
           transform: scale(0.7);
+        }
+        @include mq(sp) {
+          transform: scale(0.35);
         }
 
         &_human01 {
@@ -148,6 +212,10 @@
             bottom: -80px;
             left: 5.6%;
           }
+          @include mq(sp) {
+            bottom: -56px;
+            left: 4.8%;
+          }
         }
         &_human02 {
           right: 3.2%;
@@ -156,14 +224,19 @@
             transform-origin: right bottom;
             bottom: -56px;
           }
+          @include mq(sp) {
+            bottom: -32px;
+            right: 4.8%;
+          }
         }
       }
     }
     .circleBtn {
       display: inline-block;
       margin-top: 60px;
+      opacity: 0;
       @include mq(sp) {
-        margin-top: 32px;
+        margin-top: 24px;
       }
 
       a {
@@ -208,8 +281,8 @@
           outline: none;
           transition: all .3s;
           @include mq(sp) {
-            width: 100px;
-            height: 100px;
+            width: 90px;
+            height: 90px;
             margin: 0 auto;
           }
 
@@ -336,16 +409,60 @@
     .jobSearch {
       &__inner {
         max-width: 1280px + 80px;
+
+        // 装飾画像 タイヤ
+        &::before {
+          content: '';
+          background-image: url(../img/common/deco_tire.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 265px;
+          height: 231px;
+          position: absolute;
+          bottom: -72px;
+          left: -1.6%;
+          z-index: 3;
+          @include mq(tab) {
+            transform: scale(0.8);
+            transform-origin: bottom left;
+            left: 0;
+          }
+          @include mq(sp) {
+            transform: scale(0.5);
+            bottom: -56px;
+          }
+        }
       }
       &__box {
         background-color: $bg-color02;
         border: 5px solid $txt-color;
         border-radius: 40px;
         padding: 72px 10%;
+        position: relative;
+        overflow: hidden;
         @include mq(sp) {
           border: 4px solid $txt-color;
           padding: 36px 6.4%;
           border-radius: 24px;
+        }
+
+        // 背景画像
+        &::before {
+          content: '';
+          display: inline-block;
+          background-image: url(../../img/common/bg_logo_large.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 508px;
+          height: 334px;
+          position: absolute;
+          bottom: 0;
+          right: -7.2%;
+          bottom: -32px;
+          @include mq(tab) {
+            transform: scale(0.8);
+            transform-origin: bottom right;
+          }
         }
       }
 
@@ -378,6 +495,8 @@
         margin-top: 36px;
         padding: 56px 6.4%;
         border-radius: 40px;
+        position: relative;
+        z-index: 2;
         @include mq(sp) {
           margin-top: 28px;
           padding: 32px 6.4%;
@@ -422,6 +541,13 @@
         }
 
         &-slide {
+          @include mq(pc) {
+            @for $i from 1 through 10 {
+              &:nth-child(#{$i}) {
+                animation-delay: 100ms * $i;
+              }
+            }
+          }
           a {
             display: flex;
             justify-content: flex-start;
@@ -609,18 +735,13 @@
   }
   // お仕事紹介
   .sec__jobs {
-    padding: 90px 0;
     position: relative;
-    @include mq(sp) {
-      padding: 48px 0;
-    }
-
     // 背景 黄色
     &::before {
       content: '';
       display: inline-block;
       width: 94%;
-      height: 100%;
+      height: calc(100% - 5px);
       position: absolute;
       top: 0;
       left: 0;
@@ -646,9 +767,25 @@
         display: flex;
         justify-content: flex-start;
         align-items: flex-start;
+        position: relative;
+        padding: 90px 0;
+        overflow: hidden;
         @include mq(sp) {
           display: block;
+          padding: 48px 0;
           padding-right: 20px;
+        }
+
+        &::before {
+          content: '';
+          background-image: url(../../img/common/bg_tool.png);
+          background-size: contain;
+          background-repeat: no-repeat;
+          width: 420px;
+          height: 428px;
+          position: absolute;
+          bottom: -200px;
+          right: 24px;
         }
       }
 
@@ -701,6 +838,7 @@
           }
           &02 {
             margin-top: 64px;
+            animation-delay: 200ms;
             @include mq(sp) {
               margin-top: 40px;
             }
