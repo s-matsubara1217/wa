@@ -167,6 +167,7 @@ var listener01 = function(event) {
   if (event.matches) {
     // 835px未満
     $('.jobs .lead').before($('.jobs .imgArea'))
+    $('.jobSearch .jobSearch__body').after($('.jobSearch .commonLink01'))
     ListItemsArr01.forEach(function (ListItem) {
       const Target = ListItem.querySelector('.imgArea');
       const Destination = ListItem.querySelector('.commonHead01')
@@ -181,6 +182,7 @@ var listener02 = function(event) {
   if (event.matches) {
     // 835px以上
     $('.jobs .txtArea').before($('.jobs .imgArea'))
+    $('.jobSearch .commonHead01').after($('.jobSearch .commonLink01'))
     ListItemsArr01.forEach(function (ListItem) {
       const Target = ListItem.querySelector('.imgArea');
       const Destination = ListItem.querySelector('.commonHead01')
