@@ -104,14 +104,15 @@
       }
     }
     &__sliderList {
+      border-radius: 50%;
       &__item {
         opacity: 0;
         position: absolute;
         border-radius: 50%;
         z-index: -1;
+        overflow: hidden;
         .img {
           border-radius: 50%;
-          overflow: hidden;
           img {
             border-radius: 50%;
             transition: 7s 1s ease-out;

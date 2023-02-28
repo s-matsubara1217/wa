@@ -101,7 +101,10 @@ a{
 .pcCont{display: none;}
 
 /* fonts */
-.eng{font-family: $eng;}
+.eng {
+	font-family: $eng;
+	font-style: italic;
+}
 .mincho{font-family: $mincho;}
 
 //cookie_banner

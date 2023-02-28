@@ -29,12 +29,12 @@
     transform: translateX(-50%);
     white-space: nowrap;
     @include mq(tab) {
-      font-size: 20rem;
-      top: -28px;
+      font-size: 16rem;
+      top: -10px;
     }
     @include mq(sp) {
-      font-size: 8rem;
-      top: -10px;
+      font-size: 6rem;
+      top: 0px;
     }
   }
   // ボーダー bottom
@@ -82,11 +82,6 @@
 
         .img {
           position: relative;
-          img {
-            @include mq(sp) {
-              max-height: 300px;
-            }
-          }
         }
       }
       .txtArea {
@@ -149,6 +144,7 @@
         position: absolute;
         bottom: -24px;
         right: -24px;
+        pointer-events: none;
         @include mq(sp) {
           transform: scale(0.5);
           transform-origin: bottom right;
