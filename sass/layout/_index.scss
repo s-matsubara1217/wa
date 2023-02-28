@@ -1112,6 +1112,9 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            @include mq(sp) {
+              flex-direction: column;
+            }
             .status {
               font-size: 1.4rem * 0.8;
               background-color: $txt-color;
@@ -1122,17 +1125,19 @@
               margin-right: 8px;
               @include mq(sp) {
                 font-size: 1.2rem * 0.8;
+                padding: 0 6px 2px;
               }
             }
             .name {
               font-size: 1.6rem * 0.8;
               @include mq(sp) {
-                font-size: 1.5rem * 0.8;
+                font-size: 1.4rem * 0.8;
+                margin-top: 2px;
               }
               b {
                 font-size: 1.8rem * 0.8;
                 @include mq(sp) {
-                  font-size: 1.6rem * 0.8;
+                  font-size: 1.7rem * 0.8;
                 }
               }
             }
