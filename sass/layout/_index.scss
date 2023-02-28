@@ -124,6 +124,9 @@
           width: 200px;
           top: 110px;
           left: -7%;
+          @media screen and (max-width: 1300px){
+            left: -1%;
+          }
           @include mq(tab) {
             width: 200px * 0.8;
             top: 180px;
@@ -139,6 +142,9 @@
           width: 240px;
           top: -40px;
           left: 18%;
+          @media screen and (max-width: 1300px){
+            top: -20px;
+          }
           @include mq(tab) {
             width: 240px * 0.8;
             top: 1px;
@@ -154,6 +160,10 @@
           width: 160px;
           top: 48px;
           right: 12%;
+          @media screen and (max-width: 1300px){
+            top: 24px;
+            right: 18%;
+          }
           @include mq(tab) {
             width: 160px * 0.8;
             top: 24px;
@@ -169,6 +179,10 @@
           width: 240px;
           top: 150px;
           right: -14%;
+          @media screen and (max-width: 1300px){
+            top: 120px;
+            right: -1%;
+          }
           @include mq(tab) {
             width: 240px * 0.8;
             top: 140px;
