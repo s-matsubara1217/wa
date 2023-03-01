@@ -20,7 +20,7 @@
 	</script>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>ジェイティプラントサービス株式会社 関西支店 採用サイト</title>
+	<title>株式会社和歌山イエローハット 採用サイト</title>
 
 	<meta name="description" content="">
 	<meta name="keywords" content="" />
@@ -43,7 +43,7 @@
 	<!-- fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Cabin:wght@600;700&family=Noto+Sans+JP:wght@500;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=Poppins:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 
 	<!-- style -->
 	<!-- [!] 固有 -->
@@ -61,15 +61,12 @@
 	<div class="hamburger">
 		<div class="hamburger__menu">
 			<div class="hamburger__menu__inner">
-				<div class="hamburger__menu__logo logoTxt">
+				<div class="hamburger__menu__logo">
 					<a href="index.htm" class="ro">
-						<div class="hamburger__menu__logo__main logoTxt__main">
-							<img src="img/common/logo_txt.png" alt="ジェイティプラントサービス株式会社" height="22">
-						</div>
-						<span class="hamburger__menu__logo__sub logoTxt__sub">関西支店 採用サイト</span>
+						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="107">
 					</a>
 				</div>
-				<div class="hamburger__menu__nav">
+				<nav class="hamburger__menu__nav">
 					<ul class="hamburger__menu__nav__list">
 						<li class="hamburger__menu__nav__list__item">
 							<a href="index.htm">HOME</a>
@@ -77,20 +74,12 @@
 						<li class="hamburger__menu__nav__list__item">
 							<a href="kyujin_l.htm">求人情報</a>
 						</li>
-						<li class="hamburger__menu__nav__list__item">
-							<a href="jobs.htm">お仕事紹介</a>
-						</li>
-						<li class="hamburger__menu__nav__list__item">
-							<a href="interview_l.htm">スタッフインタビュー</a>
-						</li>
-						<li class="hamburger__menu__nav__list__item">
-							<a href="oneday.htm">一日の流れ</a>
-						</li>
-						<li class="hamburger__menu__nav__list__item">
-							<a href="data.htm">数字で見るJTPS</a>
-						</li>
+						<li class="hamburger__menu__nav__list__item"><a href="jobs.htm">仕事紹介</a></li>
+						<li class="hamburger__menu__nav__list__item"><a href="interview_l.htm">スタッフインタビュー</a></li>
+						<li class="hamburger__menu__nav__list__item"><a href="oneday.htm">お店の一日</a></li>
+						<li class="hamburger__menu__nav__list__item"><a href="comapany.htm">会社概要</a></li>
 					</ul>
-				</div>
+				</nav>
 				<div class="hamburger__menu__share">
 					<p class="hd eng">SHARE</p>
 					<ul class="list">
@@ -112,23 +101,27 @@
 		<!-- ヘッダー（共通） -->
 		<header class="header">
 			<div class="header__inner">
-				<div class="header__logoTxt logoTxt">
-					<a href="index.htm">
-						<div class="header__logoTxt__main logoTxt__main">
-							<img src="img/common/logo_txt.png" alt="ジェイティプラントサービス株式会社" height="22">
-						</div>
-						<span class="header__logoTxt__sub logoTxt__sub">関西支店 採用サイト</span>
+				<div class="header__logo">
+					<a href="index.htm" class="ro">
+						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="107">
 					</a>
 				</div>
 				<nav class="header__nav">
 					<ul class="header__nav__list">
-						<li class="header__nav__list__item"><a href="kyujin_l.htm">求人情報</a></li>
-						<li class="header__nav__list__item"><a href="jobs.htm">お仕事紹介</a></li>
-						<li class="header__nav__list__item"><a href="interview_l.htm">スタッフインタビュー</a></li>
-						<li class="header__nav__list__item"><a href="oneday.htm">一日の流れ</a></li>
-						<li class="header__nav__list__item"><a href="data.htm">数字で見るJTPS</a></li>
+						<li class="header__nav__list__item"><a href="jobs.htm" class="ro">仕事紹介</a></li>
+						<li class="header__nav__list__item"><a href="interview_l.htm" class="ro">スタッフインタビュー</a></li>
+						<li class="header__nav__list__item"><a href="oneday.htm" class="ro">お店の一日</a></li>
+						<li class="header__nav__list__item"><a href="comapany.htm" class="ro">会社概要</a></li>
 					</ul>
 				</nav>
+				<div class="header__kyujinBtn commonBtn01 -kyujin">
+					<a href="kyujin_l.htm">
+						<span class="icon">
+							<img src="img/common/ico_jobsearch.png" alt="アイコン" height="25">
+						</span>
+						<span class="txt">求人情報</span>
+					</a>
+				</div>
 				<div class="header__hamburger -hamburger">
 					<span></span>
 					<span></span>
@@ -139,12 +132,17 @@
 
 		<!-- ページヘッダー（下層共通） -->
 		<div class="pageHeader">
-			<div class="pageHeader__wrap">
-				<div class="pageHeader__ttl">
-					<span class="eng anime split -for-fadeIn">New Jobs</span>
-					<h1 class="ja anime split -for-fadeIn">新着求人情報</h1>
-				</div>
-				<div class="pageHeader__img"></div>
+			<div class="pageHeader__ttl">
+				<span class="eng">
+					<!--
+						[!] 英字箇所 画像で対応しております。
+						■ 基本：〇〇（ページごとの画像フォルダ）/pageheader_ttl.png
+						■ 求人一覧：kyujin/pageheader_ttl_recruit.png
+						■ 新着求人：kyujin/pageheader_ttl_newjobs.png
+					-->
+					<img src="img/kyujin/pageheader_ttl_newjobs.png" alt="New Jobs">
+				</span>
+				<h2 class="ja split anime -for-scaleIn-rb">新着求人情報</h2>
 			</div>
 		</div>
 
@@ -152,7 +150,7 @@
 		<main class="l-main">
 			<div class="kyujin_container">
 
-				<div class="job_count_pager contents_top anime -fadeIn">
+				<div class="job_count_pager contents_top">
 					<div class="result_total">
 						<span class="result_total_all">999</span>
 						<span class="result_total_txt">件</span>
@@ -180,7 +178,7 @@
 						20.03add aタグの位置変更しました。
 						タイトルと写真に変更。
 					 -->
-					<article class="job data-for-aidemlog anime -fadeIn" data-id="${anken.job_offer_id}">
+					<article class="job data-for-aidemlog anime -slideIn-b" data-id="${anken.job_offer_id}">
 						<div class="job_inner">
 							<div class="job_wrap">
 
@@ -248,7 +246,7 @@
 						</div>
 					</article>
 					<!-- //1block -->
-					<article class="job data-for-aidemlog anime -fadeIn" data-id="${anken.job_offer_id}">
+					<article class="job data-for-aidemlog anime -slideIn-b" data-id="${anken.job_offer_id}">
 						<div class="job_inner">
 							<div class="job_wrap">
 
@@ -317,7 +315,7 @@
 					</article>
 				</div>
 
-				<div class="job_count_pager contents_bottom anime -fadeIn">
+				<div class="job_count_pager contents_bottom">
 					<div class="pager_next">
 						<a href="" class="btn">次の10件を表示</a>
 					</div>
@@ -353,125 +351,112 @@
 
 		<!-- リクルート（共通） -->
 		<section class="sec__recruit">
+			<span class="bg-txt eng split anime -for-scaleIn-rb">RECRUIT</span>
 			<div class="recruit">
-				<div class="recruit__bg">
-					<img src="img/common/recruit_bg.jpg" alt="イメージ" class="ofi" loading="lazy">
-				</div>
 				<div class="recruit__inner innerWrap">
-					<div class="txtArea">
-						<div class="commonHead01 -white -lineGreen">
-							<span class="eng anime split -for-fadeIn">Recruit</span>
-							<h2 class="ja anime split -for-fadeIn">求人情報</h2>
+					<div class="recruit__body">
+						<div class="imgArea anime -slideIn-b">
+							<div class="img">
+								<img src="img/common/recruit_human.png" alt="人物イメージ" class="ofi" loading="lazy">
+							</div>
 						</div>
-						<p class="lead">
-							あなたのご応募を<br>
-							お待ちしております。
-						</p>
-						<div class="commonBtn01 -large">
-							<a href="kyujin_l.htm">
-								<span class="icon">
-									<img src="img/common/ico_jobsearch_white.png" alt="アイコン" loading="lazy" height="20">
-								</span>
-								<span class="txt">求人情報を見る</span>
-							</a>
+						<div class="txtArea">
+							<span class="eng">RECRUIT</span>
+							<p class="lead">
+								イエローハットで<br>
+								ゼロから車のプロになろう！
+							</p>
+							<div class="commonBtn01 -recruit">
+								<a href="kyujin_l.htm">
+									<span class="icon">
+										<img src="img/common/ico_jobsearch.png" alt="アイコン" height="25">
+									</span>
+									<span class="txt">求人情報を見る</span>
+								</a>
+							</div>
 						</div>
+					</div>
+					<div class="recruit__searchBox">
+						<ul class="searchList">
+							<li class="searchList__item">
+								<div class="head">勤務地から探す</div>
+								<ul class="list">
+									<li class="list__item"><a href="#" class="ro">和歌山県</a></li>
+									<li class="list__item"><a href="#" class="ro">大阪府</a></li>
+								</ul>
+							</li>
+							<li class="searchList__item">
+								<div class="head">職種から探す</div>
+								<ul class="list">
+									<li class="list__item"><a href="#" class="ro">Pitスタッフ</a></li>
+									<li class="list__item"><a href="#" class="ro">レジ・販売スタッフ</a></li>
+								</ul>
+							</li>
+							<li class="searchList__item">
+								<div class="head">雇用形態から探す</div>
+								<ul class="list">
+									<li class="list__item"><a href="#" class="ro">正社員</a></li>
+									<li class="list__item"><a href="#" class="ro">アルバイト</a></li>
+									<li class="list__item"><a href="#" class="ro">パート</a></li>
+								</ul>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</div>
 		</section>
-
 		<!-- フッター（共通） -->
 		<footer class="footer">
 			<div class="footer__inner innerWrap">
-				<div class="footer__main">
-					<div class="footer__logoTxt logoTxt">
-						<a href="index.htm">
-							<div class="logoTxt__main">
-								<img src="img/common/logo_txt.png" alt="ジェイティプラントサービス株式会社" height="25">
-							</div>
-							<span class="logoTxt__sub">関西支店 採用サイト</span>
-						</a>
-					</div>
-					<nav class="footer__nav">
-						<ul class="footer__nav__list">
-							<li class="footer__nav__list__item"><a href="kyujin_l.htm">求人情報</a></li>
-							<li class="footer__nav__list__item"><a href="jobs.htm">お仕事紹介</a></li>
-							<li class="footer__nav__list__item"><a href="interview_l.htm">スタッフインタビュー</a></li>
-							<li class="footer__nav__list__item"><a href="oneday.htm">一日の流れ</a></li>
-							<li class="footer__nav__list__item"><a href="data.htm">数字で見るJTPS</a></li>
-						</ul>
-					</nav>
-					<div class="footer__jobSearch">
-						<div class="footer__jobSearch__item">
-							<div class="head">勤務地から探す</div>
-							<ul class="list">
-								<li class="list__item"><a href="#">京都府</a></li>
-							</ul>
-						</div>
-						<div class="footer__jobSearch__item">
-							<div class="head">職種から探す</div>
-							<ul class="list">
-								<li class="list__item"><a href="#">たばこ製造工場の構内作業</a></li>
-								<li class="list__item"><a href="#">製造補助スタッフ</a></li>
-							</ul>
-						</div>
-						<div class="footer__jobSearch__item">
-							<div class="head">雇用形態から探す</div>
-							<ul class="list">
-								<li class="list__item"><a href="#">契約社員</a></li>
-								<li class="list__item"><a href="#">パート</a></li>
-							</ul>
-						</div>
-					</div>
-					<div class="footer__wrap">
-						<div class="footer__cr">&copy; JT Plant Service Co., Ltd. All rights reserved.</div>
-						<div class="footer__ga">
-							<a href="#">Googleアナリティクスの利用について</a>
-						</div>
-					</div>
+				<div class="footer__logo">
+					<a href="index.htm" class="ro">
+						<img src="img/common/logo_hd.png" alt="株式会社和歌山イエローハット" height="107">
+					</a>
+				</div>
+				<nav class="footer__nav">
+					<ul class="footer__nav__list">
+						<li class="footer__nav__list__item"><a href="kyujin_l.htm" class="ro">求人情報</a></li>
+						<li class="footer__nav__list__item"><a href="jobs.htm" class="ro">仕事紹介</a></li>
+						<li class="footer__nav__list__item"><a href="interview_l.htm" class="ro">スタッフインタビュー</a></li>
+						<li class="footer__nav__list__item"><a href="oneday.htm" class="ro">お店の一日</a></li>
+						<li class="footer__nav__list__item"><a href="comapany.htm" class="ro">会社概要</a></li>
+					</ul>
+				</nav>
+				<div class="footer__sns">
+					<div class="head eng">SHARE</div>
+					<ul class="list">
+						<li class="list__item">
+							<a href="#" class="ro">
+								<img src="img/common/ico_facebook.png" alt="アイコン" height="32">
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="#" class="ro">
+								<img src="img/common/ico_twitter.png" alt="アイコン" height="32">
+							</a>
+						</li>
+						<li class="list__item">
+							<a href="#" class="ro">
+								<img src="img/common/ico_line.png" alt="アイコン" height="32">
+							</a>
+						</li>
+					</ul>
 				</div>
 				<div class="footer__sub">
-					<div class="wrap">
-						<div class="footer__sns">
-							<div class="head eng">SHARE</div>
-							<ul class="list">
-								<li class="list__item">
-									<a href="#">
-										<img src="img/common/ico_facebook.png" alt="アイコン" height="32">
-									</a>
-								</li>
-								<li class="list__item">
-									<a href="#">
-										<img src="img/common/ico_twitter.png" alt="アイコン" height="32">
-									</a>
-								</li>
-								<li class="list__item">
-									<a href="#">
-										<img src="img/common/ico_line.png" alt="アイコン" height="32">
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="footer__corporate">
-							<a href="#">
-								<span class="txt">コーポレートサイト</span>
-								<span class="icon">
-									<img src="img/common/ico_external.png" alt="アイコン" height="14">
-								</span>
-							</a>
-						</div>
+					<div class="footer__cr">&copy; 株式会社和歌山イエローハット</div>
+					<div class="footer__ga">
+						<a href="#" class="ro">Googleアナリティクスの利用について</a>
 					</div>
-					<div class="footer__logo">
-						<img src="img/common/logo.png" alt="ひとのときを、想う。JT" height="40">
+					<div class="footer__corporate">
+						<a href="#" class="ro">イエローハット公式サイト</a>
 					</div>
 				</div>
 			</div>
 		</footer>
-
 		<!-- ページトップ（共通） -->
 		<span class="pagetop">
 			<a href="#container">
-				<img src="img/common/pagetop.png" height="94" alt="PAGETOP">
+				<img src="img/common/pagetop.png" height="68" alt="PAGETOP">
 			</a>
 		</span>
 

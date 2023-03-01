@@ -43,7 +43,7 @@
 	<!-- fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700&family=Poppins:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&family=Poppins:ital,wght@1,600;1,700&display=swap" rel="stylesheet">
 
 	<!-- style -->
 	<!-- [!] 固有 -->
@@ -132,12 +132,24 @@
 
 		<!-- ページヘッダー（下層共通） -->
 		<div class="pageHeader">
+			<div class="pageHeader__ttl">
+				<span class="eng">
+					<!--
+						[!] 英字箇所 画像で対応しております。
+						■ 基本：〇〇（ページごとの画像フォルダ）/pageheader_ttl.png
+						■ 求人一覧：kyujin/pageheader_ttl_recruit.png
+						■ 新着求人：kyujin/pageheader_ttl_newjobs.png
+					-->
+					<img src="img/kyujin/pageheader_ttl_recruit.png" alt="Recruit">
+				</span>
+				<h2 class="ja split anime -for-scaleIn-rb">求人情報</h2>
+			</div>
 		</div>
 
 		<!-- コンテンツ -->
 		<main class="l-main">
 			<div class="kyujin_container">
-				<div class="search_panel_wrap">
+				<div class="search_panel_wrap anime -slideIn-b">
 					<div class="search_panel">
 						<div class="toggle search-toggle">
 							<p class="toggle_txt">条件を指定する</p>
@@ -290,7 +302,7 @@
 
 				<div class="job_list">
 					<!-- 1block -->
-					<article class="job data-for-aidemlog" data-id="${anken.job_offer_id}">
+					<article class="job data-for-aidemlog anime -slideIn-b" data-id="${anken.job_offer_id}">
 						<header class="job_head">
 
 							<div class="job_head_meta">
@@ -371,7 +383,7 @@
 					</article>
 					<!-- //1block -->
 
-					<article class="job data-for-aidemlog" data-id="${anken.job_offer_id}">
+					<article class="job data-for-aidemlog anime -slideIn-b" data-id="${anken.job_offer_id}">
 						<header class="job_head">
 							<div class="job_head_meta">
 								<div class="job_head_meta_inner">

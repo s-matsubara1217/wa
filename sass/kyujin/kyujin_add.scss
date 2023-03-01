@@ -13,13 +13,6 @@
 .lower-kyujin_l,
 .lower-kyujin_d,
 .lower-whatsnew {
-  // 余白
-  .l-main {
-    padding-bottom: 110px;
-    @include mq(sp) {
-      padding-bottom: 56px;
-    }
-  }
   .job_count_pager {
     &.contents_top,
     &.contents_bottom {
@@ -46,6 +39,9 @@
       }
     }
     &.contents_top {
+      @include mq(sp) {
+        padding: 0 8px;
+      }
       .pagination {
         li {
           margin: 0 2px;
@@ -53,6 +49,12 @@
       }
     }
     &.contents_bottom {
+      @include mq(tab) {
+        padding-top: 60px;
+      }
+      @include mq(sp) {
+        padding-top: 40px;
+      }
       .btn {
         background-color: $txt-color;
       }
@@ -63,14 +65,26 @@
   }
   .btn {
     border-radius: 100px;
+    @include mq(pc) {
+      transition: transform 0.3s;
+      &:hover {
+        opacity: 1;
+        transform: scale(1.05);
+      }
+    }
+    @include mq(sp) {
+      padding: 9px 0;
+    }
 
     &.btn_secondary {
       background-color: $txt-color;
     }
     &.btn_external {
+      color: $txt-color !important;
       &:after  {
         top:24px;
         right: 20px;
+        background-image: url(../img/kyujin/ico_custom_blank_txtcolor.png);
         @include mq(sp) {
           top: 19px;
           right: 16px;
@@ -94,6 +108,12 @@
 --------------------*/
 .lower-kyujin_l,
 .lower-whatsnew {
+  .kyujin_container {
+    @include mq(sp) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+  }
   .job {
     border: none;
     background-color: #fefce0;
@@ -104,15 +124,24 @@
     @include mq(sp) {
       padding: 28px 24px;
       margin-top: 28px;
+      border-radius: 24px;
+      border: 4px solid $txt-color !important;
     }
   }
   .job_head_meta {
     border-bottom: 1px solid $txt-color;
     padding-bottom: 12px;
     margin-bottom: 20px;
+    @include mq(sp) {
+      padding-bottom: 10px;
+      margin-bottom: 16px;
+    }
   }
   .job_foot {
     padding-top: 28px;
+    @include mq(sp) {
+      padding-top: 20px;
+    }
   }
   .job_body_head_img,
   .job_img_wrap {
@@ -141,12 +170,17 @@
 --------------------*/
 .lower-kyujin_l {
   .l-main {
-    padding-top: 110px;
+    padding-top: 80px;
+    padding-bottom: 88px;
+    @include mq(tab) {
+      padding-top: 68px;
+      padding-bottom: 72px;
+    }
     @include mq(sp) {
-      padding-top: 64px;
+      padding-top: 48px;
+      padding-bottom: 48px;
     }
   }
-
   .search_panel {
     background-color: #fefce0;
     border: 5px solid $txt-color;
@@ -155,7 +189,9 @@
     position: relative;
     overflow: hidden;
     @include mq(sp) {
-      padding: 44px 6.4% 32px;
+      padding: 28px 6.4% 32px;
+      border-radius: 24px;
+      border: 4px solid $txt-color;
     }
 
     // 背景画像
@@ -175,6 +211,11 @@
         transform: scale(0.8);
         transform-origin: bottom right;
       }
+      @include mq(sp) {
+        transform: scale(0.4);
+        right: -6.4%;
+        bottom: -16px;
+      }
     }
   }
   .search_body {
@@ -184,7 +225,8 @@
     position: relative;
     z-index: 2;
     @include mq(sp) {
-      padding-bottom: 28px;
+      padding: 28px 6.4%;
+      border-radius: 20px;
     }
   }
   .search-toggle {
@@ -203,10 +245,15 @@
         background-color: lighten($txt-color,5%);
       }
     }
+    @include mq(sp) {
+      margin-bottom: 20px;
+    }
+
     .toggle_txt {
       padding: 1em;
       @include mq(sp) {
         font-size: 1.3rem;
+        padding: 0.8em;
       }
     }
     .toggle_trigger {
@@ -228,59 +275,83 @@
 --------------------*/
 .lower-kyujin_d {
   .l-main {
-    padding-top: 64px;
-    @include mq(sp) {
-      padding-top: 28px;
+    padding-top: 56px;
+    padding-bottom: 88px;
+    position: relative;
+    // 背景画像 複数アイコン
+    &::before {
+      content: '';
+      display: inline-block;
+      background-image: url(../img/common/bg_icons.png);
+      background-repeat: repeat;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0.12;
+      pointer-events: none;
     }
+    @include mq(tab) {
+      padding-bottom: 72px;
+    }
+    @include mq(sp) {
+      padding-top: 36px;
+      padding-bottom: 40px;
+    }
+  }
+  .kyujin_container {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+  .kyujin_container__box {
+    background-color: #fefce0;
+    border: 5px solid $txt-color;
+    border-radius: 40px;
+    padding: 48px 6.4% 80px;
+    @include mq(sp) {
+      border-radius: 4px solid $txt-color;
+      padding: 28px 6.4% 44px;
+      border-radius: 24px;
+    }
+  }
+  .job_head_meta {
+    border-bottom: 1px solid $txt-color;
+    margin-bottom: 20px;
+  }
+  .job_outline_item,
+  .appeal_list_item {
+    border-bottom: 1px solid $txt-color;
   }
   .job_body_block {
     margin: 64px 0;
+    &:last-child {
+      margin-bottom: 0;
+    }
     @include mq(sp) {
       margin: 32px 0;
     }
   }
   .outline_ttl {
-    background-color: $primary-color;
-    padding: 0.8em 1.2em;
-    border-radius: 10px 0 10px 0;
+    background-color: $txt-color;
+    padding: 0.6em 1.2em;
     margin-bottom: 8px;
+    border-radius: 10px;
     @include mq(sp) {
-      padding: 0.6em 1em;
-      margin-bottom: 4px;
+      padding: 0.5em 1em;
+      margin-bottom: 0px;
+      border-radius: 8px;
     }
 
     .txt {
+      // color: $txt-color;
       color: #fff;
-      font-size: 2.1rem;
+      font-size: 2rem;
       display: inline-block;
       position: relative;
       font-weight: bold;
       @include mq(sp) {
         font-size: 1.7rem;
-      }
-
-      // アンダーライン
-      &:before {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: 4px;
-        width: 0%;
-        height: 10px;
-        background: #007a49;
-        transition: all 0.4s;
-        transition-delay: 0.5s;
-        @include mq(sp) {
-          height: 8px;
-        }
-      }
-
-      &.anime {
-        &.js-active {
-          &:before {
-            width: 100%;
-          }
-        }
       }
     }
 
@@ -290,6 +361,13 @@
       .btn_convertion {
         background-color: $primary-color;
         border-radius: 100px;
+        @include mq(pc) {
+          transition: transform 0.3s;
+          &:hover {
+            opacity: 1;
+            transform: scale(1.05);
+          }
+        }
 
         &:after {
           top: 50%;
@@ -303,16 +381,28 @@
     }
   }
   .page_back {
+    padding-top: 52px;
     padding-bottom: 0;
     @include mq(sp) {
-      padding-top: 16px;
+      padding-top: 32px;
     }
     a {
+      display: inline-block;
+      background-color: $txt-color;
+      color: #fff;
+      border-radius: 100px;
+      padding: 16px 48px;
+      font-size: 1.5rem;
       @include mq(pc) {
+        transition: transform 0.3s;
         &:hover {
-          color: $primary-color;
-          opacity: 0.7;
+          opacity: 1;
+          transform: scale(1.05);
         }
+      }
+      @include mq(sp) {
+        font-size: 1.4rem;
+        padding: 12px 32px;
       }
     }
   }
@@ -324,8 +414,14 @@
 .lower-whatsnew {
   .l-main {
     padding-top: 80px;
+    padding-bottom: 80px;
+    @include mq(tab) {
+      padding-top: 68px;
+      padding-bottom: 72px;
+    }
     @include mq(sp) {
-      padding-top: 48px;
+      padding-top: 40px;
+      padding-bottom: 48px;
     }
   }
   .job {

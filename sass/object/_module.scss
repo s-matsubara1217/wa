@@ -12,12 +12,97 @@
 	pageHeader
 --------------------*/
 .pageHeader{
+	position: relative;
+	text-align: center;
+	padding: 36px 0 88px;
+	@include mq(sp) {
+		padding: 32px 0 56px;
+	}
+
+	// 背景 アイコン画像
+	&::before {
+		content: '';
+		display: inline-block;
+		background-image: url(../img/common/bg_icons.png);
+		background-repeat: repeat;
+		position: absolute;
+		top: -38px;
+		left: 0;
+		width: 100%;
+		height: calc(100% + 38px);
+		opacity: 0.12;
+		pointer-events: none;
+		z-index: 2;
+		@include mq(sp) {
+			top: -48px;
+			height: calc(100% + 48px);
+		}
+	}
+	// 背景 濃オレンジ
+	&::after {
+		content: '';
+		display: inline-block;
+		background: #f5bc00;
+		position: absolute;
+		top: -131px;
+		left: 0;
+		width: 100%;
+		height: calc(100% + 131px);
+		pointer-events: none;
+		z-index: 1;
+		@include mq(sp) {
+			top: -80px;
+			height: calc(100% + 80px);
+		}
+	}
+
+	&__ttl {
+		position: relative;
+		z-index: 5;
+
+		.ja {
+			font-size: 2.4rem;
+			font-weight: 900;
+			color: #513e29;
+			margin-top: 10px;
+			@include mq(sp) {
+				font-size: 1.7rem;
+				margin-top: 4px;
+			}
+		}
+	}
+
+}
+.lower-kyujin_l {
+	.pageHeader__ttl {
+		.eng {
+			img {
+				height: 72px;
+				@include mq(sp) {
+					height: 48px;
+				}
+			}
+		}
+	}
+}
+.lower-whatsnew {
+	.pageHeader__ttl {
+		.eng {
+			img {
+				height: 67px;
+				@include mq(sp) {
+					height: 40px;
+				}
+			}
+		}
+	}
 }
 
 /*--------------------
 	breadcrumb
 --------------------*/
 .breadcrumb {
+	// border-top: 5px solid $txt-color;
 	&__list{
 		position: relative;
     z-index: 1;
