@@ -301,8 +301,10 @@
     }
   }
   .kyujin_container {
-    padding-left: 12px;
-    padding-right: 12px;
+    @include mq(sp) {
+      padding-left: 12px;
+      padding-right: 12px;
+    }
   }
   .kyujin_container__box {
     background-color: #fefce0;
