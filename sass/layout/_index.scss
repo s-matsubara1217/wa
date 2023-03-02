@@ -1087,9 +1087,9 @@
                 left: 50%;
                 transform: translateX(-50%);
                 @include mq(sp) {
-                  transform: scale(0.7) translateX(-50%);
+                  transform: scale(0.8) translateX(-50%);
                   transform-origin: top left;
-                  top: -8px;
+                  top: -10px;
                 }
               }
               .txt {
@@ -1098,8 +1098,12 @@
                 display: block;
                 text-align: center;
                 font-size: 1.1rem;
+                font-feature-settings: "palt";
+                display: inline-block;
+                margin-top: 4px;
                 @include mq(sp) {
-                  font-size: 0.8rem;
+                  font-size: 1rem;
+                  margin-top: 3px;
                 }
               }
             }
