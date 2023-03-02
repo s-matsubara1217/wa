@@ -136,6 +136,23 @@
 						0px 3px 0 #4a3d26,  0 -3px 0 #4a3d26,
 						-3px 0 0 #4a3d26, 3px 0 0 #4a3d26;
 		}
+		&.-txt04 {
+			text-align: center;
+			svg {
+				width: 100%;
+				height: auto;
+				display: flex;
+				justify-content: center;
+				overflow: visible;
+				text-align: center;
+			}
+			text {
+				fill: #fff;
+				stroke: #4a3d26;
+				stroke-width: 5;
+				stroke-linejoin: round;
+			}
+		}
 	}
 }
 
