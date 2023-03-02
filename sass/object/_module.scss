@@ -83,6 +83,62 @@
 	}
 }
 
+.set {
+	margin-top: 32px;
+	&:first-child {
+		margin-top: 0;
+	}
+
+	.del {
+		display: inline-block;
+		line-height: 1;
+	}
+	.eng {
+		font-size: 7.2rem;
+		line-height: 1;
+		color: #fff;
+		display: block;
+		&.-txt {
+			text-shadow:1px 1px 0 #4a3d26, -1px -1px 0 #4a3d26,
+						-1px 1px 0 #4a3d26, 1px -1px 0 #4a3d26,
+						0px 1px 0 #4a3d26,  0 -1px 0 #4a3d26,
+						-1px 0 0 #4a3d26, 1px 0 0 #4a3d26,
+						2px 2px 0 #4a3d26, -2px -2px 0 #4a3d26,
+						-2px 2px 0 #4a3d26, 2px -2px 0 #4a3d26,
+						0px 2px 0 #4a3d26,  0 -2px 0 #4a3d26,
+						-2px 0 0 #4a3d26, 2px 0 0 #4a3d26,
+						3px 3px 0 #4a3d26, -3px -3px 0 #4a3d26,
+						-3px 3px 0 #4a3d26, 3px -3px 0 #4a3d26,
+						0px 3px 0 #4a3d26,  0 -3px 0 #4a3d26,
+						-3px 0 0 #4a3d26, 3px 0 0 #4a3d26,
+						4px 4px 0 #4a3d26, -4px -4px 0 #4a3d26,
+						-4px 4px 0 #4a3d26, 4px -4px 0 #4a3d26,
+						0px 4px 0 #4a3d26,  0 -4px 0 #4a3d26,
+						-4px 0 0 #4a3d26, 4px 0 0 #4a3d26;
+		}
+		&.-txt02 {
+			-webkit-text-stroke: 4px #4a3d26;
+			text-stroke: 4px #4a3d26;
+		}
+		&.-txt03 {
+			-webkit-text-stroke: 3px #4a3d26;
+			text-stroke: 3px #4a3d26;
+			text-shadow:1px 1px 0 #4a3d26, -1px -1px 0 #4a3d26,
+						-1px 1px 0 #4a3d26, 1px -1px 0 #4a3d26,
+						0px 1px 0 #4a3d26,  0 -1px 0 #4a3d26,
+						-1px 0 0 #4a3d26, 1px 0 0 #4a3d26,
+						2px 2px 0 #4a3d26, -2px -2px 0 #4a3d26,
+						-2px 2px 0 #4a3d26, 2px -2px 0 #4a3d26,
+						0px 2px 0 #4a3d26,  0 -2px 0 #4a3d26,
+						-2px 0 0 #4a3d26, 2px 0 0 #4a3d26,
+						3px 3px 0 #4a3d26, -3px -3px 0 #4a3d26,
+						-3px 3px 0 #4a3d26, 3px -3px 0 #4a3d26,
+						0px 3px 0 #4a3d26,  0 -3px 0 #4a3d26,
+						-3px 0 0 #4a3d26, 3px 0 0 #4a3d26;
+		}
+	}
+}
+
 /*--------------------
 	breadcrumb
 --------------------*/
