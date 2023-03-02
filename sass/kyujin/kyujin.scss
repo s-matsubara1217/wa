@@ -650,25 +650,26 @@ parts
     display: flex;
     list-style: none;
     &_item {
-        color: $primary-color;
+        color: #fff;
+        background-color: $txt-color;
         font-size: 11px;
         font-weight: bold;
         line-height: 22px;
         text-align: center;
         margin-left: .7em;
-        padding: 0 .5em;
-        height: 24px;
-        border: 1px solid $primary-color;
-        background: #fff;
+        padding: 0.2em 0.6em;
+        height: 27px;
         overflow: hidden;
     }
 
     @include mq-down(md)  {
         &_item {
             width: 24px;
+            height: 24px;
+            padding: 0 0.6em;
             color: transparent;
             &:first-letter {
-                color: $primary-color;
+                color: #fff;
                 margin-right: 20px;
             }
         }
@@ -1689,7 +1690,6 @@ kyujin_d
         .phone {
             flex-basis: 200px;
             margin-right: 10px;
-            background: #fff;
             .btn_phone {
 				padding-top: 5px;
 				padding-bottom: 5px;
@@ -1697,16 +1697,16 @@ kyujin_d
             }
             .phone_num ,
             .phone_notes {
-                color: $primary-color;
+                color: #fff;
             }
             .phone_num {
-                font-size: 14px;
+                font-size: 16px;
 				&:before {
-					background-image: url("../img/kyujin/ico_custom_tel_color.png");
+					background-image: url("../img/kyujin/ico_custom_tel_white.png");
 				}
             }
             .phone_notes {
-                font-size: 10px;
+                font-size: 11px;
             }
         }
         .convertion {

@@ -14,9 +14,9 @@
 .pageHeader{
 	position: relative;
 	text-align: center;
-	padding: 36px 0 88px;
+	padding: 36px 0;
 	@include mq(sp) {
-		padding: 32px 0 56px;
+		padding: 32px 0 28px;
 	}
 
 	// 背景 アイコン画像
@@ -34,25 +34,10 @@
 		pointer-events: none;
 		z-index: 2;
 		@include mq(sp) {
-			top: -48px;
-			height: calc(100% + 48px);
-		}
-	}
-	// 背景 濃オレンジ
-	&::after {
-		content: '';
-		display: inline-block;
-		background: #f5bc00;
-		position: absolute;
-		top: -131px;
-		left: 0;
-		width: 100%;
-		height: calc(100% + 131px);
-		pointer-events: none;
-		z-index: 1;
-		@include mq(sp) {
-			top: -80px;
-			height: calc(100% + 80px);
+			top: -0px;
+			height: calc(100% + 0px);
+			// background-size: 160%;
+			background-size: 560px;
 		}
 	}
 
@@ -102,7 +87,7 @@
 	breadcrumb
 --------------------*/
 .breadcrumb {
-	// border-top: 5px solid $txt-color;
+	border-top: 3px solid $txt-color;
 	&__list{
 		position: relative;
     z-index: 1;

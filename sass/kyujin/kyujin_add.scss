@@ -53,7 +53,7 @@
         padding-top: 60px;
       }
       @include mq(sp) {
-        padding-top: 40px;
+        padding-top: 36px;
       }
       .btn {
         background-color: $txt-color;
@@ -170,15 +170,15 @@
 --------------------*/
 .lower-kyujin_l {
   .l-main {
-    padding-top: 80px;
-    padding-bottom: 88px;
+    padding-top: 48px;
+    padding-bottom: 96px;
     @include mq(tab) {
-      padding-top: 68px;
-      padding-bottom: 72px;
+      padding-top: 40px;
+      padding-bottom: 80px;
     }
     @include mq(sp) {
-      padding-top: 48px;
-      padding-bottom: 48px;
+      padding-top: 8px;
+      padding-bottom: 56px;
     }
   }
   .search_panel {
@@ -268,6 +268,13 @@
   .custom-form .category_list input[type=checkbox]+label {
     border: 1px solid #dedede;
   }
+  .custom-form {
+    .pull-down {
+      select {
+        padding: 11px 48px 11px 20px;
+      }
+    }
+  }
 }
 
 /*--------------------
@@ -275,8 +282,8 @@
 --------------------*/
 .lower-kyujin_d {
   .l-main {
-    padding-top: 56px;
-    padding-bottom: 88px;
+    padding-top: 64px;
+    padding-bottom: 110px;
     position: relative;
     // 背景画像 複数アイコン
     &::before {
@@ -293,11 +300,11 @@
       pointer-events: none;
     }
     @include mq(tab) {
-      padding-bottom: 72px;
+      padding-bottom: 90px;
     }
     @include mq(sp) {
-      padding-top: 36px;
-      padding-bottom: 40px;
+      padding-top: 32px;
+      padding-bottom: 52px;
     }
   }
   .kyujin_container {
@@ -415,19 +422,19 @@
 --------------------*/
 .lower-whatsnew {
   .l-main {
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 32px;
+    padding-bottom: 96px;
     @include mq(tab) {
-      padding-top: 68px;
       padding-bottom: 72px;
     }
     @include mq(sp) {
-      padding-top: 40px;
-      padding-bottom: 48px;
+      padding-top: 12px;
+      padding-bottom: 56px;
     }
   }
   .job {
     margin-top: 32px;
+    border-radius: 20px;
     @include mq(sp) {
       margin-top: 24px;
     }
@@ -439,13 +446,5 @@
   }
   .job_inner {
     padding: 0;
-  }
-  .job_count_pager {
-    &.contents_bottom {
-      padding-top: 56px;
-      @include mq(sp) {
-        padding-top: 40px;
-      }
-    }
   }
 }

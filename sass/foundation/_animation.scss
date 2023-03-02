@@ -176,7 +176,7 @@
     opacity: 0;
     &.js-active {
       @include animation(
-        fadein-b 600ms $easing 100ms
+        fadein-b 600ms $easing
       );
     }
   }
