@@ -992,6 +992,7 @@
         margin: 0 auto;
         text-align: center;
         position: relative;
+        height: 100%;
         @include mq(sp) {
           width: 70%;
         }
@@ -1000,8 +1001,10 @@
           // 共通
           opacity: 0.72;
           transition: transform 0.5s, opacity 0.4s;
+          height: auto;
 
           a {
+            height: 100%;
             @include mq(pc) {
               &:hover {
                 .img {
@@ -1011,19 +1014,13 @@
                 }
              }
             }
-
           }
-          .lead {
-            font-size: 3rem * 0.8;
-            font-weight: bold;
-            line-height: 1.6;
-            width: 72%;
-            padding: 0 3%;
+          .txtArea {
+            width: 80%;
             margin: 0 auto;
             position: relative;
             @include mq(sp) {
-              font-size: 1.9rem * 0.8;
-              width: 92%;
+              width: 95%;
             }
 
             // "
@@ -1043,6 +1040,18 @@
                 transform-origin: top left;
                 // left: 8px
               }
+            }
+          }
+          .lead {
+            font-size: 3rem * 0.8;
+            font-weight: bold;
+            line-height: 1.6;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            @include mq(sp) {
+              font-size: 1.8rem * 0.8;
             }
           }
           .imgArea {
@@ -1066,8 +1075,8 @@
               z-index: 2;
               transition: transform 0.5s;
               @include mq(sp) {
-                width: 96px * 0.8;
-                height: 96px * 0.8;
+                width: 110px * 0.8;
+                height: 110px * 0.8;
                 border: 8px solid $primary-color;
                 transform: scale(0.75) translate(-50%,-50%) !important;
               }
@@ -1088,7 +1097,7 @@
                 line-height: 1.5;
                 display: block;
                 text-align: center;
-                font-size: 1.16rem;
+                font-size: 1.1rem;
                 @include mq(sp) {
                   font-size: 0.8rem;
                 }
@@ -1137,7 +1146,7 @@
               b {
                 font-size: 1.8rem * 0.8;
                 @include mq(sp) {
-                  font-size: 1.7rem * 0.8;
+                  font-size: 1.5rem * 0.8;
                 }
               }
             }
@@ -1170,7 +1179,7 @@
           justify-content: flex-start;
           align-items: stretch;
           position: absolute;
-          top: 38%;
+          top: 42%;
           left: 50%;
           width: 168%;
           justify-content: space-between;
