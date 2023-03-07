@@ -28,3 +28,56 @@
 		padding: 3em 0;
 	}
 }
+
+
+// 230307 matsubara リクルートテキスト差し替え
+.sec__recruit {
+	padding-top: 80px;
+	@media screen and (max-width: 834px) {
+		padding-top: 72px;
+	}
+	.recruit {
+		&__inner {
+			max-width: 1130px;
+		}
+
+		&__body {
+			.imgArea {
+				margin-left: 0;
+				margin-bottom: -140px;
+				@media screen and (max-width: 1200px) {
+					max-width: 440px;
+					margin-bottom: -108px;
+				}
+				@media screen and (max-width: 834px) {
+					margin-left: auto;
+				}
+			}
+			.txtArea {
+				padding-bottom: 56px;
+				margin-left: 12px;
+				@media screen and (max-width: 1200px) {
+					padding-bottom: 44px;
+				}
+				@media screen and (max-width: 834px) {
+					margin-left: 0;
+					padding-bottom: 0;
+				}
+
+				.lead {
+					font-size: 2.8rem;
+					@media screen and (max-width: 1200px) {
+						font-size: 2.6rem;
+					}
+					@media screen and (max-width: 834px) {
+						font-size: 2rem;
+					}
+				}
+			}
+
+		}
+		&__searchBox {
+			margin-top: 0;
+		}
+	}
+}
